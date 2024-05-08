@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RiskNarrative">
+
+    <listeners>
+        <listener class-name="base.Listeners"/>
+    </listeners>
+
+    <test thread-count="3" name="RiskNarrative">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="uk.co.riskNarrative.cucumber.runners.TestRunner"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
