@@ -21,16 +21,16 @@ public class CareersJobsPage {
     WebDriver driver;
     @FindBy(xpath = "//h1[normalize-space()='Search all jobs']")
     private WebElement searchAllJobsHeader;
-    @FindBy(css = "input.search-box-input.ais-search-box--input")
+    @FindBy(css = ".search-box-input.ais-search-box--input")
     private WebElement searchBox;
-    @FindBy(css = "span.search-box-button-text")
+    @FindBy(css = "#search-box-button")
     private WebElement searchButton;
 
     @FindBy(css = "div.no-results")
     private WebElement noSearchResultsHeader;
 
-    @FindBy(css = ".score-button.hidden-xs.hidden-sm")
-    private WebElement searchAllJobsBtn;
+    @FindBy(css = ".score-button.btn-red")
+    private WebElement searchJobsButton;
 
     @FindBy(css = "#search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d")
     private WebElement showingResultsStatistics;
@@ -230,18 +230,18 @@ public class CareersJobsPage {
 
     }
 
-    public String getSearchAllJobsButtonText() {
-        return new VerificationHelper(driver).getText(searchAllJobsBtn);
+    public String getSearchJobsButtonText() {
+        return new VerificationHelper(driver).getText(searchJobsButton);
 
     }
 
-    public boolean assertSearchAllJobsButtonIsDisplayed() {
-        return new VerificationHelper(driver).isDisplayed(searchAllJobsBtn);
+    public boolean assertSearchJobsButtonIsDisplayed() {
+        return new VerificationHelper(driver).isDisplayed(searchJobsButton);
 
     }
 
-    public CareersJobsPage clickSearchAllJobsButton() {
-        searchAllJobsBtn.click();
+    public CareersJobsPage clickSearchJobsButton() {
+        searchJobsButton.click();
         log.info("Search all jobs button is clicked");
         careersJobsPage = new CareersJobsPage();
         return careersJobsPage;

@@ -9,9 +9,9 @@ import io.cucumber.testng.CucumberOptions;
         monochrome = true,
         //dryRun = true,
         //tags = "@OO1TC",
-        //tags = "@002TC",
+        tags = "@002TC",
         //tags = "@003TC",
-        tags = "@all",
+        //tags = "@all",
         //tags = "@002-TC-03",
         plugin = {
                 "pretty",

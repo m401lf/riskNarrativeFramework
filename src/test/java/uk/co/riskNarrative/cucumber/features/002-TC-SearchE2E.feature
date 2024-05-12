@@ -23,7 +23,7 @@ Feature: Financial Services - Functionality
       | Corporate Responsibility |
       | Diversity & Inclusion    |
     And click on Careers link
-    And I tap on "Search all jobs"
+    And I tap on "Search jobs"
 
   Scenario: 01 - should display No Result
     When I search for job with a job title "automation-tester"

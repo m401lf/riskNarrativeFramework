@@ -48,10 +48,10 @@ public class steps extends BaseTest {
     }
 
     @Then("I tap on {string}")
-    public void i_tap_on(String financialServicesText) throws IOException {
+    public void i_tap_on(String SearchJobsText) {
         careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        AssertionHelper.updateTestStatus(careersJobsPage.getSearchAllJobsButtonText().contains(financialServicesText));
-        careersJobsPage.clickSearchAllJobsButton();
+        AssertionHelper.updateTestStatus(careersJobsPage.getSearchJobsButtonText().contains(SearchJobsText));
+        careersJobsPage.clickSearchJobsButton();
     }
 
     @When("I search for job with a job title {string}")
