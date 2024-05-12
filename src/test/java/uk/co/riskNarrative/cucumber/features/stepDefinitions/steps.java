@@ -2,6 +2,7 @@ package uk.co.riskNarrative.cucumber.features.stepDefinitions;
 
 import base.BasePage;
 import base.BaseTest;
+import helper.GenericMethods;
 import helper.LoggerHelper;
 import helper.assertion.AssertionHelper;
 import helper.javaScript.JavaScriptHelper;
@@ -28,6 +29,7 @@ public class steps extends BaseTest {
     CareersJobsPage careersJobsPage;
     CookieBannerPage cookieBannerPage;
     BasePage basePage;
+    GenericMethods gm;
 
     @Given("I landed on a home page {string}")
     public void i_landed_on_a_home_page(String url) throws IOException {
@@ -140,7 +142,11 @@ public class steps extends BaseTest {
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsTitlesList().contains(dataTable.cell(5, 0)));
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsTitlesList().contains(dataTable.cell(6, 0)));
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsTitlesList().contains(dataTable.cell(7, 0)));
-
+        gm = new GenericMethods(driver);
+        boolean status = gm.isElementPresent("/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[4]/ul/li/div/div/div/div/div/div/h4", "xpath");
+        System.out.println(status);
+        AssertionHelper.updateTestStatus(status);
+        //AssertionHelper.updateTestStatus(aboutUsPage.assertAboutUsLinkArePresent());
     }
 
     @When("I should see {string} and {int} other links")

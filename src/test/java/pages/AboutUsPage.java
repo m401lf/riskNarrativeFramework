@@ -1,5 +1,6 @@
 package pages;
 
+import helper.GenericMethods;
 import helper.LoggerHelper;
 import helper.assertion.VerificationHelper;
 import org.apache.log4j.Logger;
@@ -12,12 +13,16 @@ import java.util.List;
 public class AboutUsPage {
     final static Logger log = LoggerHelper.getLogger(AboutUsPage.class);
     WebDriver driver;
+    @FindBy(xpath = "/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[4]/ul/li/div/div/div/div/div/div/h4")
+    public List<WebElement> allLinks;
 
     @FindBy(xpath = "//div[@class='score-content-spot']//p[contains(text(),'About Us')]")
     private WebElement aboutUsHeadingText;
+    GenericMethods gm;
 
-    @FindBy(xpath = "/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[4]/ul/li/div/div/div/div/div/div/h4")
-    private List<WebElement> allLinks;
+    public List<WebElement> getAllLinks() {
+        return allLinks;
+    }
 
     @FindBy(xpath = "//div[@class='score-style-box clearfix']//a[@class='score-button btn-clickable-area'][normalize-space()='Learn More']")
     private WebElement careersLink;
@@ -62,6 +67,12 @@ public class AboutUsPage {
 
     public List<String> getAboutUsTitlesList() {
         return allLinks.stream().parallel().filter(link -> link.isDisplayed() && link.isEnabled()).map(WebElement::getText).toList();
+    }
+
+    public boolean assertAboutUsLinkArePresent() {
+        String aboutUsLinks = "/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[4]/ul/li/div/div/div/div/div/div/h4";
+        gm = new GenericMethods(driver);
+        return gm.isElementPresent(aboutUsLinks, "xpath");
     }
 
 
