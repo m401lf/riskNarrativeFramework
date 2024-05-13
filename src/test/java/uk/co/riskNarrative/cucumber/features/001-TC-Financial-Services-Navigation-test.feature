@@ -10,7 +10,8 @@ Feature: Choose your Industry to Financial Services - Functionality
     And I should see the cookie banner
     And I tap on Accept all Cookies
     And I should not see the cookie banner
-    When I tap on Choose Your Industry link
+    #When I tap on Choose Your Industry link
+    When I tap "Choose Your Industry" link in top menu page
     And I can see page heading as "Industries" and 4 other links
     And Industries Sub links are present
     Then Industries Sub links are displayed as follows:

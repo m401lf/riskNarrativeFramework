@@ -20,7 +20,7 @@ public class TopMenuNavigationPage {
     @FindBy(xpath = "(//span[@class='caret'])[1]")
     private WebElement chooseYourIndustryLinkArrow;
 
-    @FindBy(css = "(a[aria-expanded='false']")
+    @FindBy(xpath = "//a[normalize-space()='Choose Your Industry']")
     private WebElement chooseYourIndustryLink;
 
     @FindBy(xpath = "//a[@href='#'][normalize-space()='About Us']")

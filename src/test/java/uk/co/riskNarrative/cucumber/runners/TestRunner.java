@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
         publish = true,
         monochrome = true,
         //dryRun = true,
-        //tags = "@OO1TC",
+        tags = "@OO1TC",
         //tags = "@002TC",
         //tags = "@003TC",
         //tags = "@all",

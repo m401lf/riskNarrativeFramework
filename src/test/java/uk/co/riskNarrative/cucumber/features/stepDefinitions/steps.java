@@ -37,9 +37,10 @@ public class steps extends BaseTest {
         naviPage = launchApplication(url);
     }
 
-    @When("click on Careers link")
-    public void click_on_careers_link() {
-        AboutUsPage aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
+    @When("click on {string} link")
+    public void click_careers_link(String linkText) {
+        aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
+        AssertionHelper.updateTestStatus(aboutUsPage.assertAnyLinksInAboutUsPage(linkText));
         careersJobsPage = aboutUsPage.clickCareersLink();
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
@@ -154,12 +155,19 @@ public class steps extends BaseTest {
         AboutUsPage aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsText().contains(aboutUsText));
         Assert.assertEquals(aboutUsPage.getAllLinksCount(), linkCount);
-        System.out.println(aboutUsPage.getAboutUsTitlesList());
     }
 
     @When("I tap on Choose Your Industry link")
     public void i_tap_on_choose_your_industry_link() {
         naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
+        naviPage.clickChooseYourIndustryLink();
+    }
+
+
+    @When("I tap {string} link in top menu page")
+    public void i_tap_link_in_top_menu_page(String chooseYourIndustryText) {
+        naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
+        AssertionHelper.updateTestStatus(naviPage.getChooseYourIndustryLink().contains(chooseYourIndustryText));
         naviPage.clickChooseYourIndustryLink();
     }
 
@@ -181,13 +189,12 @@ public class steps extends BaseTest {
     }
 
     @Then("Industries Sub links are present")
-    public void industries_and_sub_links_are_presented_as_follows() {
+    public void industries_and_sub_links_are_present() {
         indexPage = PageFactory.initElements(driver, IndexPage.class);
-        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesPresent().get(0).isDisplayed());
-        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesPresent().get(1).isDisplayed());
-        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesPresent().get(2).isDisplayed());
-        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesPresent().get(3).isDisplayed());
-
+        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Financial Services"));
+        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Insurance"));
+        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Life and Pensions"));
+        AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Corporations and Non-Profits"));
     }
 
     @Then("Financial Services Sub title links are present")
@@ -214,7 +221,6 @@ public class steps extends BaseTest {
     @Then("I should see red links are displayed as follows:")
     public void i_should_see_red_links_are_displayed_as_follows(DataTable dataTable) {
         indexPage = PageFactory.initElements(driver, IndexPage.class);
-        //Assert.assertTrue(indexPage.getFinancialServicesItems().get(0).getText().contains(dataTable.cell(0, 0)));
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesList().contains(dataTable.cell(0, 0)));
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesList().contains(dataTable.cell(1, 0)));
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesList().contains(dataTable.cell(2, 0)));

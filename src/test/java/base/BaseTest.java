@@ -18,6 +18,7 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.TopMenuNavigationPage;
+import utilities.GlobalVars;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -86,7 +87,7 @@ public class BaseTest {
         }
 
         //driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalVars.DEFAULT_IMPLICIT_TIMEOUT));
         driver.manage().window().maximize();
         return driver;
 

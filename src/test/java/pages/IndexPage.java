@@ -3,6 +3,7 @@ package pages;
 import helper.LoggerHelper;
 import helper.assertion.VerificationHelper;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,7 +50,19 @@ public class IndexPage {
 
     }
 
-    public List<WebElement> assertIndustriesTitlesPresent() {
+    public boolean getIndustriesTitleListText() {
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> industriesTitles.size() > GlobalVars.THREE);
+        try {
+            driver.findElements(By.xpath("/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[1]/ul/li/div/div[2]/ul/li/a/div[1]"));
+            System.out.println("Pass: Element is Present");
+        } catch (Exception e) {
+            System.out.println("Fail: Element is Not Present");
+        }
+
+        return true;
+    }
+
+    public List<WebElement> assertIndustriesTitlesPresent(String title) {
         new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> industriesTitles.size() > GlobalVars.THREE);
         try {
             for (int i = 0; i < industriesTitles.size(); i++) {
@@ -61,6 +74,20 @@ public class IndexPage {
             log.error("Fail: Element is Not Present");
         }
         return industriesTitles;
+    }
+
+    public boolean assertIndustriesTitlesArePresent(String title) {
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> industriesTitles.size() > GlobalVars.THREE);
+        try {
+            for (int i = 0; i < industriesTitles.size(); i++) {
+                if (industriesTitles.get(i).isDisplayed()) {
+                    log.info("Index " + i + " :: " + "Element is Present: " + industriesTitles.get(i).getText());
+                }
+            }
+        } catch (Exception e) {
+            log.error("Fail: Element is Not Present");
+        }
+        return industriesTitles.stream().anyMatch(s -> s.isDisplayed() && s.getText().contains(title));
     }
 
     public List<WebElement> assertFinancialServicesItemsPresent() {

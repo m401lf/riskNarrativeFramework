@@ -1,5 +1,5 @@
 @002TC
-@all
+#@all
 Feature: Financial Services - Functionality
   As a user
   I want to be able to search for jobs
@@ -22,7 +22,7 @@ Feature: Financial Services - Functionality
       | Experts                  |
       | Corporate Responsibility |
       | Diversity & Inclusion    |
-    And click on Careers link
+    And click on "Careers" link
     And I tap on "Search jobs"
 
   Scenario: 01 - should display No Result

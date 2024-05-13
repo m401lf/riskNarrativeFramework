@@ -20,9 +20,6 @@ public class AboutUsPage {
     private WebElement aboutUsHeadingText;
     GenericMethods gm;
 
-    public List<WebElement> getAllLinks() {
-        return allLinks;
-    }
 
     @FindBy(xpath = "//div[@class='score-style-box clearfix']//a[@class='score-button btn-clickable-area'][normalize-space()='Learn More']")
     private WebElement careersLink;
@@ -37,6 +34,17 @@ public class AboutUsPage {
         return new CareersJobsPage();
     }
 
+    public boolean assertAnyLinksInAboutUsPage(String linkText) {
+        return allLinks.stream()
+                .parallel()
+                .anyMatch(s -> s.getText().equalsIgnoreCase(linkText));
+    }
+
+    public String getCareersLinkText() {
+        System.out.println(careersLink.getText());
+        log.info("Getting Careers Link Text");
+        return new VerificationHelper(driver).getText(careersLink);
+    }
 
     public boolean assertAboutUsTextIsDisplayed() {
         log.info("Asserting About Us Link");
