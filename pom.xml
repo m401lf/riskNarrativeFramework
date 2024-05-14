@@ -81,14 +81,26 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <microservicebase.uri>https://test.beta.jobs.jjo.uk/</microservicebase.uri>
+        <uitesting.url>https://test.beta.jobs.jjo.uk</uitesting.url>
+        <candidateuitesting.url>https://test.beta.jobs.jjo.uk</candidateuitesting.url>
+        <database.dburl>jdbc:postgresql://dps-tst-hec-jjoj-dat00.cug8xuagehzu.eu-west-2.rds.amazonaws.com:5432/
+        </database.dburl>
+        <database.username>liquibase_user</database.username>
+        <database.password>76f243daf5f328474470</database.password>
+    </properties>
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -295,7 +307,17 @@
             <scope>test</scope>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.testautomationguru.pdfutil</groupId>
+            <artifactId>pdf-util</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ngoanh2n</groupId>
+            <artifactId>csv-comparator</artifactId>
+            <version>1.2.0</version>
+            <scope>test</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
         <dependency>
             <groupId>io.appium</groupId>

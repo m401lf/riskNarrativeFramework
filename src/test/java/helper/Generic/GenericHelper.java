@@ -152,11 +152,7 @@ public class GenericHelper {
 
         int size = elementList.size();
 
-        if (size > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return size > 0;
     }
 
 }

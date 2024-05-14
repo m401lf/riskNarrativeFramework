@@ -10,7 +10,6 @@ Feature: Choose your Industry to Financial Services - Functionality
     And I should see the cookie banner
     And I tap on Accept all Cookies
     And I should not see the cookie banner
-    #When I tap on Choose Your Industry link
     When I tap "Choose Your Industry" link in top menu page
     And I can see page heading as "Industries" and 4 other links
     And Industries Sub links are present
@@ -19,7 +18,8 @@ Feature: Choose your Industry to Financial Services - Functionality
       | Insurance                    |
       | Life and Pensions            |
       | Corporations and Non-Profits |
-    And I tap on "Financial Services" link
+    #And I tap Industries sub menu link "Financial Services"
+    And I tap "Financial Services" link Industries
     And I can see "Select an Industry" and 7 red links are displayed
     And Financial Services Sub title links are present
     And I should see red links are displayed as follows:

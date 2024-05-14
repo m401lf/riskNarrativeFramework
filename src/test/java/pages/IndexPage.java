@@ -3,7 +3,6 @@ package pages;
 import helper.LoggerHelper;
 import helper.assertion.VerificationHelper;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -50,18 +49,6 @@ public class IndexPage {
 
     }
 
-    public boolean getIndustriesTitleListText() {
-        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> industriesTitles.size() > GlobalVars.THREE);
-        try {
-            driver.findElements(By.xpath("/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[1]/ul/li/div/div[2]/ul/li/a/div[1]"));
-            System.out.println("Pass: Element is Present");
-        } catch (Exception e) {
-            System.out.println("Fail: Element is Not Present");
-        }
-
-        return true;
-    }
-
     public List<WebElement> assertIndustriesTitlesPresent(String title) {
         new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> industriesTitles.size() > GlobalVars.THREE);
         try {
@@ -91,7 +78,7 @@ public class IndexPage {
     }
 
     public List<WebElement> assertFinancialServicesItemsPresent() {
-        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> financialServicesItemList.size() > 6);
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until((d) -> financialServicesItemList.size() > 6);
         try {
             for (int i = 0; i < financialServicesItemList.size(); i++) {
                 if (financialServicesItemList.get(i).isDisplayed()) {
@@ -119,6 +106,17 @@ public class IndexPage {
         log.info("Financial Services link is clicked");
         financialServicesPage = new FinancialServicesPage();
         return financialServicesPage;
+    }
+
+    public FinancialServicesPage clickAndElementWithMatchingTextLink(List<WebElement> industriesTitles, String subMenuLinkText) {
+        industriesTitles.stream().filter(s -> s.isDisplayed() && s.getText().contains(subMenuLinkText)).findFirst().ifPresent(s -> s.click());
+        log.info("Matching link text is clicked");
+        return new FinancialServicesPage();
+    }
+
+    public void clickElementInIndustriesMatchingTextLink(List<WebElement> industriesTitles, String subMenuLinkText) {
+        industriesTitles.stream().filter(s -> s.isDisplayed() && s.getText().contains(subMenuLinkText)).findFirst().ifPresent(s -> s.click());
+        log.info("Matching link text is clicked");
     }
 
 
@@ -161,5 +159,10 @@ public class IndexPage {
 
     }
 
+
+    public void clickElementInIndustriesLink(String industryName) {
+        industriesTitles.stream().filter(s -> s.isDisplayed() && s.getText().contains(industryName)).findFirst().ifPresent(s -> s.click());
+        log.info(industryName + " link text is clicked");
+    }
 
 }

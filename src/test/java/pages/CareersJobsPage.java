@@ -59,6 +59,7 @@ public class CareersJobsPage {
 
     public void clickSocialShareButton() {
         socialShareButton.click();
+
     }
 
     public boolean assertSocialShareButtonIsDisplayed() {
@@ -76,9 +77,9 @@ public class CareersJobsPage {
     }
 
     public List<String> getSearchFilterHeadersText() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchFilterHeaders.size() > 1);
         return searchFilterHeaders.stream().parallel().filter(WebElement::isDisplayed).map(WebElement::getText).toList();
     }
-
 
     public WebElement getSearchAllJobsHeader() {
         return searchAllJobsHeader;
@@ -106,7 +107,7 @@ public class CareersJobsPage {
     }
 
     public WebElement getNoSearchResultsHeader() {
-        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> noSearchResultsHeader.isDisplayed());
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until((s) -> noSearchResultsHeader.isDisplayed());
         return noSearchResultsHeader;
 
     }
@@ -121,7 +122,6 @@ public class CareersJobsPage {
 
     }
 
-
     public String getShowingResultsStatisticsText() {
         return new VerificationHelper(driver).getText(showingResultsStatistics);
     }
@@ -131,6 +131,7 @@ public class CareersJobsPage {
     }
 
     public int getDisplayedJobsTitlesCountGreaterThanZero() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> displayedJobsTitlesList.size() > 1);
         log.info("Displayed jobs titles count: " + displayedJobsTitlesList.size());
         return displayedJobsTitlesList.size();
 
@@ -144,6 +145,7 @@ public class CareersJobsPage {
     }
 
     public boolean assertJobSearchResultsByJobTitle(String jobTitle) {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> displayedJobsTitlesList.size() > 1);
         for (int i = 0; i < displayedJobsTitlesList.size(); i++) {
             if (displayedJobsTitlesList.get(i).isDisplayed()) {
                 return displayedJobsTitlesList.get(i).getText().contains(jobTitle);
@@ -154,6 +156,7 @@ public class CareersJobsPage {
 
     public void inputSearchBox(String jobTitle) {
         searchBox.clear();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchBox.isDisplayed());
         searchBox.sendKeys(jobTitle);
         log.info("Search box is entered with text: " + jobTitle);
     }
@@ -174,7 +177,6 @@ public class CareersJobsPage {
         return new VerificationHelper(driver).isNotDisplayed(textForManySearchResultsItems);
     }
 
-
     public boolean assertSelectOneMoreTextIsDisplayed() {
         return new VerificationHelper(driver).isDisplayed(selectOneMoreText);
 
@@ -187,6 +189,7 @@ public class CareersJobsPage {
 
     public void enterSearchBox(String jobTitle) {
         searchBox.clear();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchBox.isDisplayed());
         searchBox.sendKeys(jobTitle);
         log.info("Search box is entered with text: " + jobTitle);
     }
@@ -226,11 +229,13 @@ public class CareersJobsPage {
     }
 
     public String getNoSearchResultsHeaderText() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> noSearchResultsHeader.isDisplayed());
         return new VerificationHelper(driver).getText(noSearchResultsHeader);
 
     }
 
     public String getSearchJobsButtonText() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchJobsButton.isDisplayed());
         return new VerificationHelper(driver).getText(searchJobsButton);
 
     }
@@ -240,11 +245,10 @@ public class CareersJobsPage {
 
     }
 
-    public CareersJobsPage clickSearchJobsButton() {
+    public void clickSearchJobsButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchJobsButton.isDisplayed());
         searchJobsButton.click();
         log.info("Search all jobs button is clicked");
-        careersJobsPage = new CareersJobsPage();
-        return careersJobsPage;
     }
 
 

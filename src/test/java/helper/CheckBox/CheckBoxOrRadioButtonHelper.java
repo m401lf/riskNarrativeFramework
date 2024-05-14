@@ -1,8 +1,3 @@
-/**
- * @author rahul.rathore
- * <p>
- * 06-Aug-2016
- */
 package helper.CheckBox;
 
 import helper.Button.ButtonHelper;
@@ -32,25 +27,25 @@ public class CheckBoxOrRadioButtonHelper implements IwebComponent {
         unSelectCheckBox(driver.findElement(locator));
     }
 
-    public boolean isIselected(By locator) {
+    public boolean isSelectedBy(By locator) {
         log.info(locator);
-        return isIselected(driver.findElement(locator));
+        return isSelected(driver.findElement(locator));
     }
 
-    public boolean isIselected(WebElement element) {
+    public boolean isSelected(WebElement element) {
         boolean flag = element.isSelected();
         log.info(flag);
         return flag;
     }
 
     public void selectCheckBox(WebElement element) {
-        if (!isIselected(element))
+        if (!isSelected(element))
             element.click();
         log.info(element);
     }
 
     public void unSelectCheckBox(WebElement element) {
-        if (isIselected(element))
+        if (isSelected(element))
             element.click();
         log.info(element);
     }

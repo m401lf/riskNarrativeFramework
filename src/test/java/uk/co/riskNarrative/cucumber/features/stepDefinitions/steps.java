@@ -38,7 +38,7 @@ public class steps extends BaseTest {
     }
 
     @When("click on {string} link")
-    public void click_careers_link(String linkText) {
+    public void click_careers_link(String linkText) throws InterruptedException {
         aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
         AssertionHelper.updateTestStatus(aboutUsPage.assertAnyLinksInAboutUsPage(linkText));
         careersJobsPage = aboutUsPage.clickCareersLink();
@@ -109,7 +109,7 @@ public class steps extends BaseTest {
     }
 
     @Given("I tap on Accept all Cookies")
-    public void i_tap_on_accept_all_cookies() {
+    public void i_tap_on_accept_all_cookies() throws InterruptedException {
         cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         cookieBannerPage.clickAcceptAllCookiesButton();
     }
@@ -126,10 +126,10 @@ public class steps extends BaseTest {
     }
 
     @When("I click {string} link")
-    public void i_tap_on_about_us_link(String aboutUsText) throws IOException {
+    public void i_tap_on_about_us_link(String menuItemText) {
         naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
-        AssertionHelper.updateTestStatus(naviPage.getAboutUsLinkText().contains(aboutUsText));
-        naviPage.clickAboutUsLink();
+        naviPage.clickAnItemMatchingTextFromTopMenuLinks(naviPage.getTopMenuList(), menuItemText);
+
     }
 
     @When("I should see About Us page links as follows:")
@@ -147,7 +147,6 @@ public class steps extends BaseTest {
         boolean status = gm.isElementPresent("/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[4]/ul/li/div/div/div/div/div/div/h4", "xpath");
         System.out.println(status);
         AssertionHelper.updateTestStatus(status);
-        //AssertionHelper.updateTestStatus(aboutUsPage.assertAboutUsLinkArePresent());
     }
 
     @When("I should see {string} and {int} other links")
@@ -157,18 +156,10 @@ public class steps extends BaseTest {
         Assert.assertEquals(aboutUsPage.getAllLinksCount(), linkCount);
     }
 
-    @When("I tap on Choose Your Industry link")
-    public void i_tap_on_choose_your_industry_link() {
-        naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
-        naviPage.clickChooseYourIndustryLink();
-    }
-
-
     @When("I tap {string} link in top menu page")
-    public void i_tap_link_in_top_menu_page(String chooseYourIndustryText) {
+    public void i_tap_link_in_top_menu_page(String menuItemText) {
         naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
-        AssertionHelper.updateTestStatus(naviPage.getChooseYourIndustryLink().contains(chooseYourIndustryText));
-        naviPage.clickChooseYourIndustryLink();
+        naviPage.clickAnItemMatchingTextFromTopMenuLinks(naviPage.getTopMenuList(), menuItemText);
     }
 
     @Then("I can see page heading as {string} and {int} other links")
@@ -204,11 +195,20 @@ public class steps extends BaseTest {
 
     }
 
-    @When("I tap on {string} link")
-    public void i_tap_on_financial_services_link(String financialServicesText) {
+
+    @When("I tap Industries sub menu link {string}")
+    public void i_tap_on_matching_industry_link(String matchingIndustryText) {
         indexPage = PageFactory.initElements(driver, IndexPage.class);
-        AssertionHelper.updateTestStatus(indexPage.getFinancialServicesLinkText().equalsIgnoreCase(financialServicesText));
-        indexPage.clickFinancialServicesLink();
+        AssertionHelper.updateTestStatus(indexPage.getFinancialServicesLinkText().equalsIgnoreCase(matchingIndustryText));
+        indexPage.clickElementInIndustriesMatchingTextLink(indexPage.getIndustriesTitles(), matchingIndustryText);
+    }
+
+    @When("I tap {string} link Industries")
+    public void i_tap_on_financial_services_industries_links(String industryName) {
+        indexPage = PageFactory.initElements(driver, IndexPage.class);
+        AssertionHelper.updateTestStatus(indexPage.getFinancialServicesLinkText().equalsIgnoreCase(industryName));
+        indexPage.clickElementInIndustriesLink(industryName);
+
     }
 
     @Then("I can see {string} and {int} red links are displayed")

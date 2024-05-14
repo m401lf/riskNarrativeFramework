@@ -5,7 +5,10 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.GlobalVars;
 
+import java.time.Duration;
 import java.util.List;
 
 public class TopMenuNavigationPage {
@@ -32,7 +35,7 @@ public class TopMenuNavigationPage {
     @FindBy(css = ".button-in-search")
     private WebElement searchBtn;
 
-    @FindBy(css = "a.score-button")
+    @FindBy(css = "/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li")
     private List<WebElement> top3MenuList;
 
     @FindBy(css = "button[aria-label='Internships &amp; Programs']")
@@ -79,7 +82,6 @@ public class TopMenuNavigationPage {
         return new AboutUsPage();
     }
 
-
     public boolean assertTopMenuItemsAreDisplayed() {
         return topMenuList.stream().parallel().filter(WebElement::isDisplayed).count() == topMenuList.size();
 
@@ -117,8 +119,9 @@ public class TopMenuNavigationPage {
     }
 
 
-    public List<WebElement> getTop3MenuList() {
-        return top3MenuList;
+    public List<WebElement> getTopMenuList() {
+        new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait)).until(driver -> topMenuList.size() > GlobalVars.THREE);
+        return topMenuList;
 
     }
 
@@ -158,4 +161,8 @@ public class TopMenuNavigationPage {
     }
 
 
+    public void clickAnItemMatchingTextFromTopMenuLinks(List<WebElement> topMenuList, String menuItemText) {
+        topMenuList.stream().parallel().filter(item -> item.getText().contains(menuItemText)).findFirst().ifPresent(s -> s.click());
+        log.info(menuItemText + " link is clicked");
+    }
 }

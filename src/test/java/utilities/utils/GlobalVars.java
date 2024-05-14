@@ -5,6 +5,11 @@ public class GlobalVars {
     /**
      * Config Properties file
      **/
+
+    // Download Application PDF location
+    public static String APPLICATIONS_DOWNLOAD_FILEPATH = System.getProperty("user.dir") + "/File_downloads";
+    public static String REPORTING_DOWNLOAD_FILEPATH = System.getProperty("user.dir") + "/File_downloads/";
+    public static String APPLICATIONS_DOWNLOAD_FILENAME = "-Application forms.pdf";
     public final static String CONFIG_PROPERTIES_DIRECTORY = "properties\\config.properties";
     public final static String DATAPROVIDER_JSONPATH = System.getProperty("user.dir") + "//src//test//java//testData//data//Register.json";
 

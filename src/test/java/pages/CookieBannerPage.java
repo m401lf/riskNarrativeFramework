@@ -90,7 +90,8 @@ public class CookieBannerPage {
 
     }
 
-    public String getAcceptAllCookiesButtonText() {
+    public String getAcceptAllCookiesButtonText() throws InterruptedException {
+        Thread.sleep(5000);
         return acceptAllCookiesButton.getText();
 
     }

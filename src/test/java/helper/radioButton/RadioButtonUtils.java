@@ -1,19 +1,23 @@
 package helper.radioButton;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
 
-public class RadioButtonHelper {
+public class RadioButtonUtils {
 
-    WebDriver driver;
-
-    public RadioButtonHelper(WebDriver driver) {
-        this.driver = driver;
+    public void assertRadioButtonsAreUnTickedByDefaults(List<WebElement> radioButtons) {
+        for (int i = 0; i < radioButtons.size(); i++) {
+            Assert.assertFalse(radioButtons.get(i).isSelected(), "Radio Button Is Ticked By Default");
+        }
     }
 
+    public void assertRadioButtonsAreDispalyed(List<WebElement> radioButtons) {
+        for (int i = 0; i < radioButtons.size(); i++) {
+            Assert.assertTrue(radioButtons.get(i).isDisplayed(), "Radio Button Is Not Displayed");
+        }
+    }
 
     public void selectRadioButtons(List<WebElement> radioButtons, int i) {
         for (i = 0; i < radioButtons.size(); i++) {
