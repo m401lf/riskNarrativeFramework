@@ -237,7 +237,8 @@ public class steps extends BaseTest {
     }
 
     @When("I click on Cookies Settings")
-    public void i_click_on_cookies_settings() {
+    public void i_click_on_cookies_settings() throws IOException {
+        getScreenshot(cookieBannerPage.getCookieBanner());
         cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         cookieBannerPage.clickCookieSettingsButton();
     }

@@ -11,12 +11,13 @@ import io.cucumber.testng.CucumberOptions;
         //tags = "@OO1TC",
         //tags = "@002TC",
         //tags = "@003TC",
-        //tags = "@all",
-        //tags = "@002-TC-03",
+        tags = "@all",
+        //name = "reg",
         plugin = {
                 "pretty",
                 "json:target/json_output/cucumber.json",
                 "junit:target/junit_xml_output/cucumber.xml",
+                "html:cucumberReport/cucumber.html",
                 "html:target/html_output/cucumber.html"
         })
 

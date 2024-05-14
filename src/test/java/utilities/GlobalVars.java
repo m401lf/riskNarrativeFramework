@@ -89,204 +89,14 @@ public class GlobalVars {
     public static final int PAGE_LOAD_TIME = 15;
     public static final int EXPLICIT_WAIT_BASIC_TIME = 30;
     public final static int implicitWait = 10;
-    static String UPDATED_SUCCESSFULLY = "Success: Your account has been successfully updated";
-    static String THANKS_FOR_SHOPPING_WITH_US = "Thank you for shopping with us!";
-
-    public static String getRecoveryLoginnameLastName() {
-        return lastname;
-    }
-
-    public static String getLoginnamePassword() {
-        return loginname_password;
-    }
-
-    //=================================================================//
-
-    public static String getEmailPassword() {
-        return email_password;
-    }
-
-    public static String getMyAccount() {
-        return MYACCOUNT;
-    }
-
-    public static String getLogin() {
-        return LOGIN;
-    }
-
-
-    public static String getRecoveryPasswordAlertSuccessMsg() {
-        return RECOVERY_PASSWORD_SUCCESS_MSG;
-    }
-
-    public static String getRecoveryLoginnameAlertSuccessMsg() {
-        return RECOVERY_LOGINNAME_SUCCESS_MSG;
-    }
-
-    public static String getWarningIncorrectLoginPasswordMsg() {
-        return INCORRECT_LOGIN_PASSWORD_PROVIDED;
-    }
-
-    public static String getForgotYourPasswordTxt() {
-        return FORGET_YOUR_PASSWORD_LINK_TXT;
-    }
-
-    public static String getForgotYourLoginnameTxt() {
-        return FORGET_YOUR_LOGINNAME_LINK_TXT;
-    }
-
-    public static String getSkinBronzerStick() {
-        return PRODUCTNAME_1;
-    }
-
-    public static String getBenefitBellaBamba() {
-        return Benefit_Bella_Bamba;
-    }
-
-    public static String getAbsolueEyePreciousCells() {
-        return PRODUCTNAME_3;
-    }
-
-    public static String getConfigPropertiesDirectory() {
-        return CONFIG_PROPERTIES_DIRECTORY;
-    }
-
-    public static String getDataProviderJsonPath() {
-        return DATAPROVIDER_JSONPATH;
-    }
-
-    public static String getHomePageTitle() {
-        return HOMEPAGE_TITLE;
-    }
-
-    public static String getRegisterJsonPath() {
-        return REGISTER_JSON_PATH;
-    }
-
-
-    public static String getHomePageUrl() {
-        return URL_HOMEPAGE;
-    }
-
-    public static String getAccountCreatePageUrl() {
-        return ACCOUNTCREATEPAGE_URL;
-    }
-
-    public static String getLoginPageUrl() {
-        return LOGINPAGE_URL;
-    }
-
-    public static String getAccountCreatePageTitle() {
-        return ACCOUNTCREATEPAGE_TITLE;
-    }
-
-    public static String getGoogleHomepageUrl() {
-        return GOOGLE_HOMEPAGE_URL;
-    }
-
-
-    public static String getUserName() {
-        return username;
-    }
-
-    public static String getPassword() {
-        return password;
-    }
-
-    public static String getRecoveryPassword_Username() {
-        return recoveryPassword_Username;
-    }
-
-
-    public static String getWrongPassword() {
-        return wrong_password;
-    }
-
-    public static String getContinueBtnText() {
-        return CONTINUE_BTN_TEXT;
-    }
-
-
-    public static String getReturningCustomer() {
-        return RETURNING_CUSTOMER;
-    }
-
-    public static String getAccountLogin() {
-        return ACCOUNT_LOGIN_TXT;
-    }
-
-    public static String getNewCustomer() {
-        return NEW_CUSTOMER;
-    }
-
-    public static String getThanksForShoppingWithUs() {
-        return THANKS_FOR_SHOPPING_WITH_US;
-    }
-
-    public static int getExplicitWait() {
-        return explicitWait;
-    }
-
-    public static int explicitWait() {
-        return expWait;
-    }
-
-
-    public static int getExplicit_Wait() {
-        return explicit_Wait;
-    }
-
-    public static String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public static String getPass() {
-        return pass_word;
-    }
-
-    public static String getWrongPass() {
-        return wrong_password;
-    }
-
-
-    public static int getImplicitWait() {
-        return implicitWait;
-    }
-
-    public static int getPollinTimeout() {
-        return POLLING_TIMEOUT;
-    }
-
-    public static int getDefaultExplicitTimeout() {
-        return DEFAULT_EXPLICIT_TIMEOUT;
-    }
-
-    public static int getMaxExplicitTimeout() {
-        return EXPLICIT_TIMEOUT;
-    }
-
-    public static int getPageLoadTimeout() {
-        return PAGELOAD_TIMEOUT;
-    }
-
-    public static int getDefaultImplicitTimeout() {
-        return DEFAULT_IMPLICIT_TIMEOUT;
-    }
-
-    public static String getUpdatedSuccessfully() {
-        return UPDATED_SUCCESSFULLY;
-    }
-
-    public static String getAccountLogoutHeaderTxt() {
-        return ACCOUNT_LOGOUT_HEADER;
-    }
-
     // All characters validation
     public static final String ALL_CHARACTERS_VALIDATION = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz!#$%&'*+-/=?^_`\\:#£:@][{|}~;.,()";
     //FTE Page
     public static final String FTE = "92";
     public static final String CONTRACT_TYPE_LOCUM = "Locum";
     public static final String CONTRACT_TYPE_PERMANENT = "Permanent";
+
+    //=================================================================//
     public static final String CONTRACT_TYPE_APPRENTICESHIP = "Apprenticeship";
     public static final String CONTRACT_TYPE_FIXED_TERM = "Fixed-term";
     public static final String CONTRACT_TYPE_TRAINING = "Training";
@@ -294,7 +104,6 @@ public class GlobalVars {
     // PAY SCHEME TYPE PAGE DATA
     public static final String HOSPITAL_MEDICAL_DENTAL = "Hospital medical and dental staff";
     public static final String HOSPITAL_MEDICAL_DENTAL_BAND = "Specialty Doctor";
-
     // Change Job Reference Decision page data
     public static final String BANDS_RELATING_TO_AGENDA_FOR_CHANGE = "Agenda for Change";
     public static final String BANDS_RELATING_TO_AGENDA_FOR_CHANGE_BAND = "Band2";
@@ -412,7 +221,6 @@ public class GlobalVars {
     public static String ESSENTIAL_SKILL_4 = "Communication 4";
     public static String DESIRABLE_SKILL_4 = "Critical Thinking 4";
     public static String SKILL_CATEGORY_5 = "Communication 5";
-
     // Document upload page
     public static String ESSENTIAL_SKILL_5 = "Communication 5";
     public static String DESIRABLE_SKILL_5 = "Critical Thinking 5";
@@ -546,7 +354,6 @@ public class GlobalVars {
     public static String INTERVIEW_ADDRESS_LINE_2 = "In A Little District";
     public static String INTERVIEW_TOWN = "Somewhere";
     public static String INTERVIEW_COUNTY = "Upon a River";
-
     // Interview date and time slot1
     public static String INTERVIEW_POSTCODE = "NE11 1AA";
     // Interview presentation Details
@@ -748,6 +555,188 @@ public class GlobalVars {
     public static String SHORTLIST_PANEL_MEMBER_3 = "User First Name User Last Name";
     public static String ADD_NOTES_AS_LEAD = "lead notes lead notes";
     public static String ADD_NOTES_AS_PANEL_MEMBER = "panel member notes panel member notes";
+    static String UPDATED_SUCCESSFULLY = "Success: Your account has been successfully updated";
+    static String THANKS_FOR_SHOPPING_WITH_US = "Thank you for shopping with us!";
+
+    public static String getRecoveryLoginnameLastName() {
+        return lastname;
+    }
+
+    public static String getLoginnamePassword() {
+        return loginname_password;
+    }
+
+    public static String getEmailPassword() {
+        return email_password;
+    }
+
+    public static String getMyAccount() {
+        return MYACCOUNT;
+    }
+
+    public static String getLogin() {
+        return LOGIN;
+    }
+
+    public static String getRecoveryPasswordAlertSuccessMsg() {
+        return RECOVERY_PASSWORD_SUCCESS_MSG;
+    }
+
+    public static String getRecoveryLoginnameAlertSuccessMsg() {
+        return RECOVERY_LOGINNAME_SUCCESS_MSG;
+    }
+
+    public static String getWarningIncorrectLoginPasswordMsg() {
+        return INCORRECT_LOGIN_PASSWORD_PROVIDED;
+    }
+
+    public static String getForgotYourPasswordTxt() {
+        return FORGET_YOUR_PASSWORD_LINK_TXT;
+    }
+
+    public static String getForgotYourLoginnameTxt() {
+        return FORGET_YOUR_LOGINNAME_LINK_TXT;
+    }
+
+    public static String getSkinBronzerStick() {
+        return PRODUCTNAME_1;
+    }
+
+    public static String getBenefitBellaBamba() {
+        return Benefit_Bella_Bamba;
+    }
+
+    public static String getAbsolueEyePreciousCells() {
+        return PRODUCTNAME_3;
+    }
+
+    public static String getConfigPropertiesDirectory() {
+        return CONFIG_PROPERTIES_DIRECTORY;
+    }
+
+    public static String getDataProviderJsonPath() {
+        return DATAPROVIDER_JSONPATH;
+    }
+
+    public static String getHomePageTitle() {
+        return HOMEPAGE_TITLE;
+    }
+
+    public static String getRegisterJsonPath() {
+        return REGISTER_JSON_PATH;
+    }
+
+    public static String getHomePageUrl() {
+        return URL_HOMEPAGE;
+    }
+
+    public static String getAccountCreatePageUrl() {
+        return ACCOUNTCREATEPAGE_URL;
+    }
+
+    public static String getLoginPageUrl() {
+        return LOGINPAGE_URL;
+    }
+
+    public static String getAccountCreatePageTitle() {
+        return ACCOUNTCREATEPAGE_TITLE;
+    }
+
+    public static String getGoogleHomepageUrl() {
+        return GOOGLE_HOMEPAGE_URL;
+    }
+
+    public static String getUserName() {
+        return username;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
+    public static String getRecoveryPassword_Username() {
+        return recoveryPassword_Username;
+    }
+
+    public static String getWrongPassword() {
+        return wrong_password;
+    }
+
+    public static String getContinueBtnText() {
+        return CONTINUE_BTN_TEXT;
+    }
+
+    public static String getReturningCustomer() {
+        return RETURNING_CUSTOMER;
+    }
+
+    public static String getAccountLogin() {
+        return ACCOUNT_LOGIN_TXT;
+    }
+
+    public static String getNewCustomer() {
+        return NEW_CUSTOMER;
+    }
+
+    public static String getThanksForShoppingWithUs() {
+        return THANKS_FOR_SHOPPING_WITH_US;
+    }
+
+    public static int getExplicitWait() {
+        return explicitWait;
+    }
+
+    public static int explicitWait() {
+        return expWait;
+    }
+
+    public static int getExplicit_Wait() {
+        return explicit_Wait;
+    }
+
+    public static String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public static String getPass() {
+        return pass_word;
+    }
+
+    public static String getWrongPass() {
+        return wrong_password;
+    }
+
+    public static int getImplicitWait() {
+        return implicitWait;
+    }
+
+    public static int getPollinTimeout() {
+        return POLLING_TIMEOUT;
+    }
+
+    public static int getDefaultExplicitTimeout() {
+        return DEFAULT_EXPLICIT_TIMEOUT;
+    }
+
+    public static int getMaxExplicitTimeout() {
+        return EXPLICIT_TIMEOUT;
+    }
+
+    public static int getPageLoadTimeout() {
+        return PAGELOAD_TIMEOUT;
+    }
+
+    public static int getDefaultImplicitTimeout() {
+        return DEFAULT_IMPLICIT_TIMEOUT;
+    }
+
+    public static String getUpdatedSuccessfully() {
+        return UPDATED_SUCCESSFULLY;
+    }
+
+    public static String getAccountLogoutHeaderTxt() {
+        return ACCOUNT_LOGOUT_HEADER;
+    }
 
     public static List<String> getApplications_reference_numbers() {
         return applications_reference_numbers;

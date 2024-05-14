@@ -4,7 +4,6 @@
     <groupId>RiskNarrative</groupId>
     <artifactId>RiskNarrative</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
     <profiles>
         <profile>
             <id>Regression</id>
@@ -141,8 +140,6 @@
             <version>3.0.4</version>
         </dependency>
 
-
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -195,17 +192,6 @@
             <version>2.0.27</version>
         </dependency>
 
-        <dependency>
-            <artifactId>pdf-util</artifactId>
-            <groupId>com.testautomationguru.pdfutil</groupId>
-            <version>0.0.3</version>
-        </dependency>
-        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind &ndash;&gt;
-                <dependency>
-                    <artifactId>jackson-databind</artifactId>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <version>2.16.0</version>
-                </dependency>-->
         <dependency>
             <artifactId>json</artifactId>
             <groupId>org.json</groupId>

@@ -1,5 +1,5 @@
 @002TC
-#@all
+@all
 Feature: Financial Services - Functionality
   As a user
   I want to be able to search for jobs
