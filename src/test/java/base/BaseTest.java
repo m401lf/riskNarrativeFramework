@@ -86,7 +86,7 @@ public class BaseTest {
             driver = new EdgeDriver();
         }
 
-        //driver.manage().deleteAllCookies();
+        driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalVars.ONE));
         //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(GlobalVars.TWO));
         driver.manage().window().maximize();
