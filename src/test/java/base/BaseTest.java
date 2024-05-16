@@ -87,7 +87,8 @@ public class BaseTest {
         }
 
         //driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalVars.DEFAULT_IMPLICIT_TIMEOUT));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalVars.ONE));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(GlobalVars.TWO));
         driver.manage().window().maximize();
         return driver;
 
@@ -135,18 +136,15 @@ public class BaseTest {
     public void waitForLoad() {
         ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver wd) {
-                // This will tel if page is loaded
                 return "complete".equals(((JavascriptExecutor) wd).executeScript("return document.readyState"));
             }
         };
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        // Wait for page complete
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait));
         wait.until(pageLoadCondition);
-        // Lower implicitly wait time
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalVars.THREE));
     }
 
-    private boolean existsElement(WebElement element) {
+    public boolean existsElement(WebElement element) {
         try {
             element.getText();
         } catch (NoSuchElementException e) {

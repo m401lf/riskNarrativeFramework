@@ -72,11 +72,15 @@ public class GlobalVars {
 
     public final static int SHORT_IMPLICIT_WAIT_TIME = 5;
     public final static int THREE = 3;
+    public final static int TWO = 2;
+    public final static int ONE = 1;
+
     public final static int SIX = 6;
 
     public final static int expWait = 2;
     public final static int explicit_Wait = 2;
-    public final static int IMPLICIT_WAIT = 10;
+    public final static int IMPLICIT_TIMEOUT = 10;
+    public final static int IMPLICIT_WAIT_TIMEOUT = 1;
     public final static int DEFAULT_EXPLICIT_TIMEOUT = 15;
 
     public final static int EXPLICIT_TIMEOUT = 30;

@@ -4,18 +4,17 @@ import helper.*;
 import helper.assertion.VerificationHelper;
 import io.cucumber.datatable.DataTable;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import utilities.GlobalVars;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static base.BaseTest.driver;
 
@@ -283,7 +282,7 @@ public class BasePage {
 
     public String getCurrentPageTitle() {
         log.info("Title is: " + driver.getTitle());
-        return new VerificationHelper(driver).getTitle();
+        return new VerificationHelper(driver).getCurrentPageTitle();
     }
 
     public String getCurrentPageUrl() {
@@ -309,6 +308,7 @@ public class BasePage {
 
     public void assertCookieBannerIsVisible() {
         Assert.assertTrue(cookieBanner.isDisplayed());
+
     }
 
     public void assertCookieIsNotPresent(String cookieName) {
@@ -354,7 +354,6 @@ public class BasePage {
     }
 
     public void assertTextDisplayedOnThePage(String str) {
-
         assertElementExist(By.xpath("//*[normalize-space(.)='" + str + "']"));
     }
 
@@ -861,7 +860,6 @@ public class BasePage {
     }
 
     public void waitForElementToAppear(By findBy) {
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 
@@ -873,24 +871,34 @@ public class BasePage {
 
     }
 
-    /*   public CartPage goToCartPage()
-       {
-           cartHeader.click();
-           CartPage cartPage = new CartPage(driver);
-           return cartPage;
-       }
+    public void waitForElementToDisappear(WebElement ele) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
+        wait.until(ExpectedConditions.invisibilityOf(ele));
+        log.info("Waiting Element to disappear....");
 
-       public OrderPage goToOrdersPage()
-       {
-           orderHeader.click();
-           OrderPage orderPage = new OrderPage(driver);
-           return orderPage;
-       }*/
-    public void waitForElementToDisappear(WebElement ele) throws InterruptedException {
-        Thread.sleep(1000);
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-//		wait.until(ExpectedConditions.invisibilityOf(ele));
+    }
 
+    public void waitAndSendKeys(WebElement findBy, String keysToSend) {
+        findBy.clear();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
+        wait.until(ExpectedConditions.visibilityOf(findBy)).sendKeys(keysToSend);
+        log.info("Waited and Successfully sent keys to :: " + keysToSend);
+    }
+
+    public void waitAndClick(WebElement findBy) {
+        log.info("Waiting Element to be clicked....");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
+        log.info("Successfully clicked ");
+        wait.until(ExpectedConditions.elementToBeClickable(findBy)).click();
+
+    }
+
+    public void SwitchWindowToChild() {
+        Set<String> s1 = driver.getWindowHandles();
+        Iterator<String> i1 = s1.iterator();
+        String parentWindow = i1.next();
+        String childWindow = i1.next();
+        driver.switchTo().window(childWindow);
     }
 
 }

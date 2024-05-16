@@ -22,14 +22,14 @@ public class CookieBannerPage {
     private WebElement cookieBanner;
     @FindBy(xpath = "//*[@id='onetrust-button-group']//button")
     private List<WebElement> cookieBannerButtons;
+
     @FindBy(id = "onetrust-policy-text")
     private WebElement cookiesPolicyText;
     @FindBy(xpath = "//button[@id='onetrust-accept-btn-handler']")
     private WebElement acceptAllCookiesButton;
-    @FindBy(css = "button.cookie-setting-link")
-    private WebElement cookieSettingsButton;
-    @FindBy(css = "img[alt='Company Logo']")
-    private WebElement coyLogoImg;
+    @FindBy(xpath = "//button[@id='onetrust-pc-btn-handler']")
+    private WebElement cookiesSettingsButton;
+
     @FindBy(css = "#ot-category-title")
     private WebElement manageConsentPreferencesHeader;
     @FindBy(css = "button[ot-accordion='true']")
@@ -63,6 +63,9 @@ public class CookieBannerPage {
     @FindBy(css = "id='close-pc-btn-handler'")
     private WebElement closeX;
 
+    @FindBy(xpath = "/html/body/div[3]/div[4]/div/div[2]/div/div[2]/div/div/div/h3/a")
+    private List<WebElement> perPageJobsDisplayedList;
+
 
     public void acceptCookie() {
         log.info("Accepting all cookies");
@@ -86,18 +89,18 @@ public class CookieBannerPage {
     }
 
     public boolean assertCookieSettingsButtonIsDisplayed() {
-        return new VerificationHelper(driver).isDisplayed(cookieSettingsButton);
+        return new VerificationHelper(driver).isDisplayed(cookiesSettingsButton);
 
     }
 
-    public String getAcceptAllCookiesButtonText() throws InterruptedException {
-        Thread.sleep(5000);
-        return acceptAllCookiesButton.getText();
+    public String getAcceptAllCookiesButtonText() {
+        return new VerificationHelper(driver).getText(acceptAllCookiesButton);
 
     }
 
     public String getCookieSettingsButtonText() {
-        return new VerificationHelper(driver).getText(cookieSettingsButton);
+        //Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(GlobalVars.THREE));
+        return new VerificationHelper(driver).getText(cookiesSettingsButton);
 
     }
 
@@ -120,7 +123,7 @@ public class CookieBannerPage {
 
     public void clickCookieSettingsButton() {
         log.info("Cookie settings button clicked");
-        cookieSettingsButton.click();
+        cookiesSettingsButton.click();
 
     }
 
@@ -354,4 +357,8 @@ public class CookieBannerPage {
         return new VerificationHelper(driver).getText(confirmMyChoicesButton);
     }
 
+
+    public String getAllowAllButtonText() {
+        return new VerificationHelper(driver).getText(allowAllButton);
+    }
 }

@@ -5,6 +5,7 @@ import base.BaseTest;
 import helper.GenericMethods;
 import helper.LoggerHelper;
 import helper.assertion.AssertionHelper;
+import helper.assertion.VerificationHelper;
 import helper.javaScript.JavaScriptHelper;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -13,6 +14,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.*;
@@ -26,7 +28,8 @@ public class steps extends BaseTest {
     TopMenuNavigationPage naviPage;
     AboutUsPage aboutUsPage;
     IndexPage indexPage;
-    CareersJobsPage careersJobsPage;
+    CareersPage careersPage;
+    JobsPage jobsPage;
     CookieBannerPage cookieBannerPage;
     BasePage basePage;
     GenericMethods gm;
@@ -38,10 +41,10 @@ public class steps extends BaseTest {
     }
 
     @When("click on {string} link")
-    public void click_careers_link(String linkText) throws InterruptedException {
+    public void click_careers_link(String linkText) {
         aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
         AssertionHelper.updateTestStatus(aboutUsPage.assertAnyLinksInAboutUsPage(linkText));
-        careersJobsPage = aboutUsPage.clickCareersLink();
+        careersPage = aboutUsPage.clickCareersLink();
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
         String parentWindowId = it.next();
@@ -52,53 +55,68 @@ public class steps extends BaseTest {
 
     @Then("I tap on {string}")
     public void i_tap_on(String SearchJobsText) {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        AssertionHelper.updateTestStatus(careersJobsPage.getSearchJobsButtonText().contains(SearchJobsText));
-        careersJobsPage.clickSearchJobsButton();
+        careersPage = PageFactory.initElements(driver, CareersPage.class);
+        AssertionHelper.updateTestStatus(careersPage.getSearchJobsButtonText().contains(SearchJobsText));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", careersPage.getSearchJobsButton());
+    }
+
+    @When("I should be taken to Jobs page as title includes {string}")
+    public void i_should_be_taken_to_jobs_page_as_title(String pageTitle) {
+        AssertionHelper.updateTestStatus(new VerificationHelper(driver).getCurrentPageTitle().contains(pageTitle));
+
+    }
+
+    @When("I should be taken to Careers page as title includes {string}")
+    public void i_should_be_taken_to_careers_page_as_title(String pageTitle) {
+        AssertionHelper.updateTestStatus(new VerificationHelper(driver).getCurrentPageTitle().contains(pageTitle));
+
+    }
+
+    @When("I can see in Careers page as follows:")
+    public void i_can_see_in_careers_page_as_follows(DataTable dataTable) {
+        careersPage = PageFactory.initElements(driver, CareersPage.class);
+        AssertionHelper.updateTestStatus(careersPage.getExploreMoreText().contains(dataTable.cell(0, 0)));
+        AssertionHelper.updateTestStatus(careersPage.getCareersHeadingText().contains(dataTable.cell(1, 0)));
+        AssertionHelper.updateTestStatus(careersPage.getSearchJobsButtonText().contains(dataTable.cell(2, 0)));
     }
 
     @When("I search for job with a job title {string}")
-    public void i_search_for_job_with_a_job_title(String jobTitle) throws IOException {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        careersJobsPage.inputSearchBox(jobTitle);
-        careersJobsPage.clickSearchButton();
+    public void i_search_for_job_with_a_job_title(String jobTitle) {
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        jobsPage.inputSearchBox(jobTitle);
+        jobsPage.clickSearchButton();
     }
 
     @Then("I can see the search result count as {string}")
     public void i_can_see_the_search_result_count_as(String searchResult) {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        Assert.assertTrue(careersJobsPage.getNoSearchResultsHeaderText().contains(searchResult));
-    }
-
-    @Then("I can see the job search result count displayed in the page as {int}")
-    public void i_can_see_the_job_search_result_count_displayed_in_the_page_as(int jobCount) throws Exception {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        Assert.assertEquals(careersJobsPage.getDisplayedJobsTitlesCountGreaterThanZero(), jobCount);
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        Assert.assertTrue(jobsPage.getNoSearchResultsHeaderText().contains(searchResult));
     }
 
     @Then("I can see the job search result count displayed in the page is greater than {int}")
     public void i_can_see_the_job_search_result_count_displayed_in_the_page_is_greater_than(Integer jobCount) throws Exception {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        Assert.assertTrue(careersJobsPage.getDisplayedJobsTitlesCountGreaterThanZero() > jobCount);
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        Assert.assertTrue(jobsPage.getDisplayedJobsTitlesCountGreaterThanZero() > jobCount);
     }
 
     @When("I should see Text for many items {string}")
     public void i_should_see_text_for_many_items(String jobTitle) {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        Assert.assertTrue(careersJobsPage.getTextForManySearchResultsItems().contains(jobTitle));
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        Assert.assertTrue(jobsPage.getTextForManySearchResultsItems().contains(jobTitle));
 
     }
 
     @When("I can see search results related to the {string}")
     public void i_can_see_search_results_having(String jobTitle) {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        Assert.assertTrue(careersJobsPage.assertSearchResultsForJobTitle(jobTitle));
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        Assert.assertTrue(jobsPage.assertSearchResultsForJobTitle(jobTitle));
     }
 
     @And("I can see search results not related to the {string}")
     public void i_can_see_search_results_not_relating_to_the(String jobTitle) {
-        careersJobsPage = PageFactory.initElements(driver, CareersJobsPage.class);
-        Assert.assertFalse(careersJobsPage.assertJobSearchResultsByJobTitle(jobTitle));
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        Assert.assertFalse(jobsPage.assertJobSearchResultsByJobTitle(jobTitle));
     }
 
 
@@ -195,14 +213,6 @@ public class steps extends BaseTest {
 
     }
 
-
-    @When("I tap Industries sub menu link {string}")
-    public void i_tap_on_matching_industry_link(String matchingIndustryText) {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
-        AssertionHelper.updateTestStatus(indexPage.getFinancialServicesLinkText().equalsIgnoreCase(matchingIndustryText));
-        indexPage.clickElementInIndustriesMatchingTextLink(indexPage.getIndustriesTitles(), matchingIndustryText);
-    }
-
     @When("I tap {string} link Industries")
     public void i_tap_on_financial_services_industries_links(String industryName) {
         indexPage = PageFactory.initElements(driver, IndexPage.class);
@@ -236,10 +246,11 @@ public class steps extends BaseTest {
         Assert.assertEquals(cookieBannerPage.getCookiePreferenceCenterText(), headingText);
     }
 
-    @When("I click on Cookies Settings")
-    public void i_click_on_cookies_settings() throws IOException {
-        getScreenshot(cookieBannerPage.getCookieBanner());
+    @When("I click on {string} in home page")
+    public void i_click_on_cookies_settings_in_home_page(String cookieSettingsText) throws IOException {
         cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
+        getScreenshot(cookieBannerPage.getCookieBanner());
+        AssertionHelper.updateTestStatus(cookieBannerPage.getCookieSettingsButtonText().contains(cookieSettingsText));
         cookieBannerPage.clickCookieSettingsButton();
     }
 
@@ -264,9 +275,11 @@ public class steps extends BaseTest {
         cookieBannerPage.assertSwitchNobIsDisplayed(categoryName);
     }
 
-    @Then("I click on Accept all Cookies button")
-    public void i_click_accept_all_cookies_button() {
+    @Then("I click on {string} button in home page")
+    public void i_click_accept_all_cookies_button_in_home_page(String acceptAllCookies) {
         cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
+        existsElement(cookieBannerPage.getCookieBanner());
+        AssertionHelper.updateTestStatus(cookieBannerPage.getAcceptAllCookiesButtonText().contains(acceptAllCookies));
         cookieBannerPage.clickAcceptAllCookiesButton();
     }
 
@@ -291,11 +304,18 @@ public class steps extends BaseTest {
         cookieBannerPage.assertSwitchNobIsDisplayed(categoryName);
     }
 
-    @When("I click Allow All Cookies button")
-    public void i_click_accept_allow_all_button() {
+    @When("I click {string} Cookies button")
+    public void i_click_allow_all_cookies_button(String allowAllCookiesText) {
         cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
-        cookieBannerPage.assertAllowAllButtonIsDisplayed();
+        AssertionHelper.updateTestStatus(cookieBannerPage.getAllowAllButtonText().contains(allowAllCookiesText));
         cookieBannerPage.clickAllowAllButton();
     }
+
+    @When("I should see Showing {string} in Job page")
+    public void i_should_see_showing_result_in_job_page(String resultText) {
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        AssertionHelper.updateTestStatus(jobsPage.getStatisticsResultText().contains(resultText));
+    }
+
 
 }

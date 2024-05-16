@@ -28,13 +28,13 @@ public class AboutUsPage {
         return allLinks;
     }
 
-    public CareersJobsPage clickCareersLink() {
+    public CareersPage clickCareersLink() {
         if (careersLink.isDisplayed() && careersLink.isEnabled()) {
             log.info("Careers Link is displayed and enabled");
             careersLink.click();
             log.info("Clicked on Careers Link");
         }
-        return new CareersJobsPage();
+        return new CareersPage();
     }
 
     public boolean assertAnyLinksInAboutUsPage(String linkText) {

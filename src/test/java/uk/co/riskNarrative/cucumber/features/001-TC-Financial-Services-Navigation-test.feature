@@ -8,7 +8,7 @@ Feature: Choose your Industry to Financial Services - Functionality
   Scenario: common steps in scenarios
     Given I landed on a home page "https://risk.lexisnexis.co.uk/"
     And I should see the cookie banner
-    And I tap on Accept all Cookies
+    And I click on "Accept All Cookies" button in home page
     And I should not see the cookie banner
     When I tap "Choose Your Industry" link in top menu page
     And I can see page heading as "Industries" and 4 other links

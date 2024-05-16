@@ -15,11 +15,11 @@ import utilities.GlobalVars;
 import java.time.Duration;
 import java.util.List;
 
-public class CareersJobsPage {
-    final static Logger log = LoggerHelper.getLogger(CareersJobsPage.class);
-    CareersJobsPage careersJobsPage;
+public class JobsPage {
+    final static Logger log = LoggerHelper.getLogger(JobsPage.class);
+    JobsPage jobsPage;
     WebDriver driver;
-    @FindBy(xpath = "//h1[normalize-space()='Search all jobs']")
+    @FindBy(xpath = "//h1[normalize-space()='Search jobs']")
     private WebElement searchAllJobsHeader;
     @FindBy(css = ".search-box-input.ais-search-box--input")
     private WebElement searchBox;
@@ -28,9 +28,6 @@ public class CareersJobsPage {
 
     @FindBy(css = "div.no-results")
     private WebElement noSearchResultsHeader;
-
-    @FindBy(css = ".score-button.btn-red")
-    private WebElement searchJobsButton;
 
     @FindBy(css = "#search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d")
     private WebElement showingResultsStatistics;
@@ -52,6 +49,7 @@ public class CareersJobsPage {
     private WebElement selectOneMoreText;
     @FindBy(xpath = "div[class='lnrs-filter-selected-options'] span[class='caret']")
     private List<WebElement> selectOneMoreDropDownList;
+
 
     public boolean assertSearchAllJobsHeaderIsDisplayed() {
         return new VerificationHelper(driver).isDisplayed(searchAllJobsHeader);
@@ -234,21 +232,10 @@ public class CareersJobsPage {
 
     }
 
-    public String getSearchJobsButtonText() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchJobsButton.isDisplayed());
-        return new VerificationHelper(driver).getText(searchJobsButton);
 
-    }
+    public String getStatisticsResultText() {
+        return new VerificationHelper(driver).getText(showingResultsStatistics);
 
-    public boolean assertSearchJobsButtonIsDisplayed() {
-        return new VerificationHelper(driver).isDisplayed(searchJobsButton);
-
-    }
-
-    public void clickSearchJobsButton() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until((s) -> searchJobsButton.isDisplayed());
-        searchJobsButton.click();
-        log.info("Search all jobs button is clicked");
     }
 
 

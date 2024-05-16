@@ -1,10 +1,12 @@
 package helper.assertion;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import helper.LoggerHelper;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.time.Duration;
 import java.util.List;
 
 
@@ -97,6 +99,7 @@ public class VerificationHelper {
             return null;
         }
         boolean status = isDisplayed(element);
+        Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(1));
         if (status) {
             log.info("Element text is displayed:: " + element);
             return element.getText().trim();
@@ -107,11 +110,13 @@ public class VerificationHelper {
 
     public String getText(List<WebElement> elements) {
         if (null == elements) {
+            Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(1));
             log.info("WebElement is null..");
             return null;
         }
         boolean status = isDisplayed((WebElement) elements);
         if (status) {
+            Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(1));
             log.info("Element text is displayed:: " + elements);
             return ((WebElement) elements).getText().trim();
         } else {
@@ -119,20 +124,11 @@ public class VerificationHelper {
         }
     }
 
-    public String getTitle() {
-        log.info("BasePage title is: " + driver.getTitle());
-        return driver.getTitle();
-    }
-
     public String getCurrentPageTitle() {
         log.info("BasePage title is: " + driver.getTitle());
         return driver.getTitle();
     }
 
-    public String getCurrentUrl() {
-        log.info("BasePage Url is: " + driver.getCurrentUrl());
-        return driver.getCurrentUrl();
-    }
 
     public String getCurrentPageUrl() {
         log.info("BasePage Url is: " + driver.getCurrentUrl());

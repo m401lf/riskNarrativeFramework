@@ -74,6 +74,7 @@ public class AssertionHelper {
 
     public static void pass() {
         Assert.assertTrue(true);
+
     }
 
     public static void updateTestStatus(boolean status) {

@@ -8,15 +8,15 @@ import java.util.Map.Entry;
 
 public class InteractableTableWebElementFinderAndClicker {
 
-	public static Map<String, Integer> deletedRowOnTablePageMap = new HashMap<>();
-	private final TableData tableData;
-	private final String pageName;
-	private int rowNumber;
+    public static Map<String, Integer> deletedRowOnTablePageMap = new HashMap<>();
+    private final TableData tableData;
+    private final String pageName;
+    private int rowNumber;
 
-	public InteractableTableWebElementFinderAndClicker(TableData tableData, String pageName) {
-		this.tableData = tableData;
-		this.pageName = pageName;
-	}
+    public InteractableTableWebElementFinderAndClicker(TableData tableData, String pageName) {
+        this.tableData = tableData;
+        this.pageName = pageName;
+    }
 
 /*	public void findAndClickInteractableTableWebElement(String interactableElementId, int rowNumber)
 			throws TableRowDoesNotExistException {
@@ -32,19 +32,19 @@ public class InteractableTableWebElementFinderAndClicker {
 		return row;
 	}*/
 
-	private void checkIfAPreviousRowNumberSmallerThanGivenRowNumberHasBeenDeletedAndDecreaseRowNumberByOneAndAdjustIt() {
-		for (Entry<String, Integer> entry : deletedRowOnTablePageMap.entrySet()) {
-			adjustRowNumberByMinusOneIfThereIsAPreviousRowAlreadyDeleted(entry);
-		}
-	}
+    private void checkIfAPreviousRowNumberSmallerThanGivenRowNumberHasBeenDeletedAndDecreaseRowNumberByOneAndAdjustIt() {
+        for (Entry<String, Integer> entry : deletedRowOnTablePageMap.entrySet()) {
+            adjustRowNumberByMinusOneIfThereIsAPreviousRowAlreadyDeleted(entry);
+        }
+    }
 
-	private void adjustRowNumberByMinusOneIfThereIsAPreviousRowAlreadyDeleted(Entry<String, Integer> entry) {
-		if (isThereAPreviousRowNumberSmallerThanGivenRowNumberAndHasBeenDeleted(entry)) {
-			--rowNumber;
-		}
-	}
+    private void adjustRowNumberByMinusOneIfThereIsAPreviousRowAlreadyDeleted(Entry<String, Integer> entry) {
+        if (isThereAPreviousRowNumberSmallerThanGivenRowNumberAndHasBeenDeleted(entry)) {
+            --rowNumber;
+        }
+    }
 
-	private boolean isThereAPreviousRowNumberSmallerThanGivenRowNumberAndHasBeenDeleted(Entry<String, Integer> entry) {
-		return entry.getKey().equals(pageName) && entry.getValue() < rowNumber;
-	}
+    private boolean isThereAPreviousRowNumberSmallerThanGivenRowNumberAndHasBeenDeleted(Entry<String, Integer> entry) {
+        return entry.getKey().equals(pageName) && entry.getValue() < rowNumber;
+    }
 }
