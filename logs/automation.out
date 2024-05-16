@@ -1,0 +1,357 @@
+2024-05-16 07:05:985 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:483 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:162 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (de672a145e048d24f455bd02e7b43683)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:340 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (de672a145e048d24f455bd02e7b43683)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:396 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (de672a145e048d24f455bd02e7b43683)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:426 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:554 INFO  CookieBannerPage:114 - Accept all cookies button clicked
+2024-05-16 07:05:835 INFO  TopMenuNavigationPage:166 - Choose Your Industry link is clicked
+2024-05-16 07:05:886 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:176 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:275 INFO  IndexPage:71 - Index 0 :: Element is Present: Financial Services
+2024-05-16 07:05:328 INFO  IndexPage:71 - Index 1 :: Element is Present: Insurance
+2024-05-16 07:05:389 INFO  IndexPage:71 - Index 2 :: Element is Present: Life and Pensions
+2024-05-16 07:05:464 INFO  IndexPage:71 - Index 3 :: Element is Present: Corporations and Non-Profits
+2024-05-16 07:05:515 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:597 INFO  IndexPage:71 - Index 0 :: Element is Present: Financial Services
+2024-05-16 07:05:651 INFO  IndexPage:71 - Index 1 :: Element is Present: Insurance
+2024-05-16 07:05:716 INFO  IndexPage:71 - Index 2 :: Element is Present: Life and Pensions
+2024-05-16 07:05:765 INFO  IndexPage:71 - Index 3 :: Element is Present: Corporations and Non-Profits
+2024-05-16 07:05:810 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:876 INFO  IndexPage:71 - Index 0 :: Element is Present: Financial Services
+2024-05-16 07:05:928 INFO  IndexPage:71 - Index 1 :: Element is Present: Insurance
+2024-05-16 07:05:07 INFO  IndexPage:71 - Index 2 :: Element is Present: Life and Pensions
+2024-05-16 07:05:87 INFO  IndexPage:71 - Index 3 :: Element is Present: Corporations and Non-Profits
+2024-05-16 07:05:221 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:360 INFO  IndexPage:71 - Index 0 :: Element is Present: Financial Services
+2024-05-16 07:05:426 INFO  IndexPage:71 - Index 1 :: Element is Present: Insurance
+2024-05-16 07:05:496 INFO  IndexPage:71 - Index 2 :: Element is Present: Life and Pensions
+2024-05-16 07:05:576 INFO  IndexPage:71 - Index 3 :: Element is Present: Corporations and Non-Profits
+2024-05-16 07:05:759 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:998 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:158 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:451 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:675 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:752 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (de672a145e048d24f455bd02e7b43683)] -> xpath: //div[normalize-space()='Financial Services']]
+2024-05-16 07:05:782 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (de672a145e048d24f455bd02e7b43683)] -> xpath: //div[normalize-space()='Financial Services']]
+2024-05-16 07:05:812 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:912 INFO  IndexPage:165 - Financial Services link text is clicked
+2024-05-16 07:05:952 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:970 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:45 INFO  IndexPage:85 - Index 0 :: Element is Present: Financial Crime Compliance
+2024-05-16 07:05:99 INFO  IndexPage:85 - Index 1 :: Element is Present: Fraud and Identity Management
+2024-05-16 07:05:151 INFO  IndexPage:85 - Index 2 :: Element is Present: Customer Data Management
+2024-05-16 07:05:192 INFO  IndexPage:85 - Index 3 :: Element is Present: Credit Risk Assessment
+2024-05-16 07:05:250 INFO  IndexPage:85 - Index 4 :: Element is Present: Collections and Recovery
+2024-05-16 07:05:297 INFO  IndexPage:85 - Index 5 :: Element is Present: Investigations and Due Diligence
+2024-05-16 07:05:357 INFO  IndexPage:85 - Index 6 :: Element is Present: Risk Orchestration
+2024-05-16 07:05:376 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:560 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:769 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:960 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:141 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:307 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:489 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:657 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:657 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:350 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:625 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:13 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:159 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:173 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:192 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:304 INFO  CookieBannerPage:114 - Accept all cookies button clicked
+2024-05-16 07:05:416 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:591 INFO  TopMenuNavigationPage:166 - About Us link is clicked
+2024-05-16 07:05:601 INFO  AboutUsPage:40 - Getting About Us Text
+2024-05-16 07:05:643 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:643 INFO  AboutUsPage:45 - Asserting all links count
+2024-05-16 07:05:993 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:237 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:541 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:866 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:171 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:465 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:861 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:225 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:241 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:368 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:443 INFO  AboutUsPage:26 - Careers Link is displayed and enabled
+2024-05-16 07:05:756 INFO  AboutUsPage:28 - Clicked on Careers Link
+2024-05-16 07:05:882 INFO  steps:53 - Parent Window Id: FFB474114CAE12B094DA15C1EF4AB278
+2024-05-16 07:05:811 INFO  VerificationHelper:128 - BasePage title is: Careers | LexisNexis Risk Solutions Group
+2024-05-16 07:05:824 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:226 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:241 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:272 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:272 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:493 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:520 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:537 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:737 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:762 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:783 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:825 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:854 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:892 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:939 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:970 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:13 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:48 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:74 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:101 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:915 INFO  VerificationHelper:128 - BasePage title is: Search Jobs | LexisNexis Risk Solutions
+2024-05-16 07:05:918 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:71 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:136 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:153 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:529 INFO  JobsPage:159 - Search box is entered with text: automation-tester
+2024-05-16 07:05:657 INFO  JobsPage:197 - Search button is clicked
+2024-05-16 07:05:193 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: div.no-results]
+2024-05-16 07:05:228 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (480fb200cadfbbfbc94ed1b1a63e14e4)] -> css selector: div.no-results]
+2024-05-16 07:05:259 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:723 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:594 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:955 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:48 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:78 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:99 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:218 INFO  CookieBannerPage:114 - Accept all cookies button clicked
+2024-05-16 07:05:314 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:488 INFO  TopMenuNavigationPage:166 - About Us link is clicked
+2024-05-16 07:05:490 INFO  AboutUsPage:40 - Getting About Us Text
+2024-05-16 07:05:530 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:530 INFO  AboutUsPage:45 - Asserting all links count
+2024-05-16 07:05:845 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:135 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:372 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:561 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:783 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:987 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:320 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:637 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:650 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:779 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:843 INFO  AboutUsPage:26 - Careers Link is displayed and enabled
+2024-05-16 07:05:28 INFO  AboutUsPage:28 - Clicked on Careers Link
+2024-05-16 07:05:56 INFO  steps:53 - Parent Window Id: B3209A0CF60F2524586ECC1D81D45296
+2024-05-16 07:05:188 INFO  VerificationHelper:128 - BasePage title is: Careers | LexisNexis Risk Solutions Group
+2024-05-16 07:05:249 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:625 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:667 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:699 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:699 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:904 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:942 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:973 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:130 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:176 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:205 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:246 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:267 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:299 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:335 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:371 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:407 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:440 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:460 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:486 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:417 INFO  VerificationHelper:128 - BasePage title is: Search Jobs | LexisNexis Risk Solutions
+2024-05-16 07:05:424 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:553 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:591 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:617 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:991 INFO  JobsPage:159 - Search box is entered with text: automation tester
+2024-05-16 07:05:243 INFO  JobsPage:197 - Search button is clicked
+2024-05-16 07:05:361 INFO  JobsPage:133 - Displayed jobs titles count: 20
+2024-05-16 07:05:611 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: (//div[@class='ais-body ais-stats--body'])[1]]
+2024-05-16 07:05:657 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (a13f326a81625f132434efe850b4167d)] -> xpath: (//div[@class='ais-body ais-stats--body'])[1]]
+2024-05-16 07:05:689 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:320 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:385 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:67 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:151 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:188 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:227 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:343 INFO  CookieBannerPage:114 - Accept all cookies button clicked
+2024-05-16 07:05:412 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:615 INFO  TopMenuNavigationPage:166 - About Us link is clicked
+2024-05-16 07:05:616 INFO  AboutUsPage:40 - Getting About Us Text
+2024-05-16 07:05:664 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:664 INFO  AboutUsPage:45 - Asserting all links count
+2024-05-16 07:05:999 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:219 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:462 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:750 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:934 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:107 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:342 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:666 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:681 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:797 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:856 INFO  AboutUsPage:26 - Careers Link is displayed and enabled
+2024-05-16 07:05:38 INFO  AboutUsPage:28 - Clicked on Careers Link
+2024-05-16 07:05:78 INFO  steps:53 - Parent Window Id: 190BFD4EE08F5AECB5D5C24A65C19724
+2024-05-16 07:05:288 INFO  VerificationHelper:128 - BasePage title is: Careers | LexisNexis Risk Solutions Group
+2024-05-16 07:05:298 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:640 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:670 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:689 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:689 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:938 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:962 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:979 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:115 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:129 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:144 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:183 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:194 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:214 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:249 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:263 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:299 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:334 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:355 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:373 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:286 INFO  VerificationHelper:128 - BasePage title is: Search Jobs | LexisNexis Risk Solutions
+2024-05-16 07:05:302 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:394 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:415 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:440 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:725 INFO  JobsPage:159 - Search box is entered with text: Software Engineer
+2024-05-16 07:05:22 INFO  JobsPage:197 - Search button is clicked
+2024-05-16 07:05:109 INFO  JobsPage:133 - Displayed jobs titles count: 20
+2024-05-16 07:05:283 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: (//div[@class='ais-body ais-stats--body'])[1]]
+2024-05-16 07:05:315 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (c2c6f1038de34c0f22b96d1b37913494)] -> xpath: (//div[@class='ais-body ais-stats--body'])[1]]
+2024-05-16 07:05:370 INFO  JobsPage:139 - Displayed jobs titles count: 20
+2024-05-16 07:05:05 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:432 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:256 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:422 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:522 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:537 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:555 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:664 INFO  CookieBannerPage:114 - Accept all cookies button clicked
+2024-05-16 07:05:782 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:955 INFO  TopMenuNavigationPage:166 - About Us link is clicked
+2024-05-16 07:05:957 INFO  AboutUsPage:40 - Getting About Us Text
+2024-05-16 07:05:01 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:01 INFO  AboutUsPage:45 - Asserting all links count
+2024-05-16 07:05:327 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:572 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:790 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:995 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:229 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:493 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:799 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:17 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:20 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:119 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:186 INFO  AboutUsPage:26 - Careers Link is displayed and enabled
+2024-05-16 07:05:432 INFO  AboutUsPage:28 - Clicked on Careers Link
+2024-05-16 07:05:496 INFO  steps:53 - Parent Window Id: 645F0135DAA9CAED0B2AAD00D32CC862
+2024-05-16 07:05:190 INFO  VerificationHelper:128 - BasePage title is: Careers | LexisNexis Risk Solutions Group
+2024-05-16 07:05:199 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:560 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:566 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:614 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:614 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:795 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:812 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:853 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:93 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:111 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //strong[normalize-space()='Explore More']]
+2024-05-16 07:05:145 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:193 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:223 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: //h2[normalize-space()='Careers']]
+2024-05-16 07:05:262 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:294 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:295 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:311 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:358 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:382 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: .horizontal > div:nth-child(3) > a:nth-child(1)]
+2024-05-16 07:05:453 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:421 INFO  VerificationHelper:128 - BasePage title is: Search Jobs | LexisNexis Risk Solutions
+2024-05-16 07:05:478 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:578 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:652 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> css selector: #search-results-statistics-e0271e2d03ab43d1b65ffb7850e12e1d]
+2024-05-16 07:05:875 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:184 INFO  JobsPage:159 - Search box is entered with text: autonation
+2024-05-16 07:05:298 INFO  JobsPage:197 - Search button is clicked
+2024-05-16 07:05:340 INFO  JobsPage:133 - Displayed jobs titles count: 20
+2024-05-16 07:05:987 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: (//div[@class='ais-body ais-stats--body'])[1]]
+2024-05-16 07:05:02 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (048f229f76ba3bbaccf3d0d8ea0b60c7)] -> xpath: (//div[@class='ais-body ais-stats--body'])[1]]
+2024-05-16 07:05:70 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:707 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:794 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:32 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (1d46845b41b2287ccc1bf648a90cb982)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:140 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (1d46845b41b2287ccc1bf648a90cb982)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:171 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (1d46845b41b2287ccc1bf648a90cb982)] -> xpath: //button[@id='onetrust-accept-btn-handler']]
+2024-05-16 07:05:191 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:336 INFO  CookieBannerPage:114 - Accept all cookies button clicked
+2024-05-16 07:05:362 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:718 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:59 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:609 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (7ebd94c570c9d7274c07fbe7c7833bac)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:41 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (7ebd94c570c9d7274c07fbe7c7833bac)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:58 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (7ebd94c570c9d7274c07fbe7c7833bac)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:106 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:107 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:338 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (7ebd94c570c9d7274c07fbe7c7833bac)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:362 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (7ebd94c570c9d7274c07fbe7c7833bac)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:409 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:833 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:348 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:963 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:332 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:370 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:429 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:429 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:672 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:697 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:740 INFO  JavaScriptHelper:16 - JavaScriptHelper has been initialised
+2024-05-16 07:05:751 INFO  JavaScriptHelper:44 - scroll till web element :: Strictly Necessary Cookies
+2024-05-16 07:05:860 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> css selector: .ot-acc-hdr.ot-always-active-group]
+2024-05-16 07:05:875 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> css selector: .ot-acc-hdr.ot-always-active-group]
+2024-05-16 07:05:900 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:532 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:571 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (ed8a84ad7be738c6c7b82f5869fd1897)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:596 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:730 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:50 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:512 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:140 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:455 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:476 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:501 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:501 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:688 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:715 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:727 INFO  JavaScriptHelper:16 - JavaScriptHelper has been initialised
+2024-05-16 07:05:757 INFO  JavaScriptHelper:44 - scroll till web element :: Strictly Necessary Cookies
+2024-05-16 07:05:847 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> css selector: .ot-acc-hdr.ot-always-active-group]
+2024-05-16 07:05:872 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> css selector: .ot-acc-hdr.ot-always-active-group]
+2024-05-16 07:05:890 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:640 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:678 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (30084e9603896e9d809acba159ab048b)] -> css selector: button.save-preference-btn-handler]
+2024-05-16 07:05:696 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:862 INFO  BaseTest:125 - Driver quitting.....
+2024-05-16 07:05:353 INFO  Listeners:28 - *********Started test execution**********
+2024-05-16 07:05:798 INFO  BaseTest:132 - navigating to ...https://risk.lexisnexis.co.uk/
+2024-05-16 07:05:334 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> id: onetrust-banner-sdk]
+2024-05-16 07:05:623 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:649 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> xpath: //button[@id='onetrust-pc-btn-handler']]
+2024-05-16 07:05:719 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:719 INFO  CookieBannerPage:125 - Cookie settings button clicked
+2024-05-16 07:05:943 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:963 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> css selector: #ot-pc-title]
+2024-05-16 07:05:992 INFO  JavaScriptHelper:16 - JavaScriptHelper has been initialised
+2024-05-16 07:05:21 INFO  JavaScriptHelper:44 - scroll till web element :: Strictly Necessary Cookies
+2024-05-16 07:05:156 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> css selector: .ot-acc-hdr.ot-always-active-group]
+2024-05-16 07:05:193 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> css selector: .ot-acc-hdr.ot-always-active-group]
+2024-05-16 07:05:209 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:17 INFO  VerificationHelper:24 - Element is Displayed: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> css selector: #accept-recommended-btn-handler]
+2024-05-16 07:05:23 INFO  VerificationHelper:104 - Element text is displayed:: [[ChromeDriver: chrome on windows (df08e654243666aa4f11348b37a1b18b)] -> css selector: #accept-recommended-btn-handler]
+2024-05-16 07:05:48 INFO  AssertionHelper:83 - UpdateTestStatus => PASSED
+2024-05-16 07:05:163 INFO  CookieBannerPage:121 - Allow all cookies button clicked
+2024-05-16 07:05:239 INFO  BaseTest:125 - Driver quitting.....
