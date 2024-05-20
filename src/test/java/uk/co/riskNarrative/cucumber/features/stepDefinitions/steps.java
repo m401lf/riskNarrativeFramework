@@ -15,12 +15,14 @@ import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pages.*;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 public class steps extends BaseTest {
@@ -40,10 +42,19 @@ public class steps extends BaseTest {
         naviPage = launchApplication(url);
     }
 
+    @And("page url and title contains {string} and {string} respectively")
+    public void page_url_and_title_contains_and_respectively(String pageUrl, String pageTitle) {
+        AssertionHelper.updateTestStatus(new VerificationHelper(driver).getCurrentPageUrl().contains(pageUrl));
+        AssertionHelper.updateTestStatus(new VerificationHelper(driver).getCurrentPageTitle().contains(pageTitle));
+
+    }
+
     @When("click on {string} link")
     public void click_careers_link(String linkText) {
         aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
-        AssertionHelper.updateTestStatus(aboutUsPage.assertAnyLinksInAboutUsPage(linkText));
+        BasePage basePage = PageFactory.initElements(driver, BasePage.class);
+        AssertionHelper.updateTestStatus(basePage.assertAnyLinkFromListOfElements(aboutUsPage.getAllAboutLinks(), linkText));
+
         careersPage = aboutUsPage.clickCareersLink();
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> it = handles.iterator();
@@ -55,7 +66,7 @@ public class steps extends BaseTest {
 
     @Then("I tap on {string}")
     public void i_tap_on(String SearchJobsText) {
-        careersPage = PageFactory.initElements(driver, CareersPage.class);
+        //careersPage = PageFactory.initElements(driver, CareersPage.class);
         AssertionHelper.updateTestStatus(careersPage.getSearchJobsButtonText().contains(SearchJobsText));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", careersPage.getSearchJobsButton());
@@ -96,26 +107,22 @@ public class steps extends BaseTest {
 
     @Then("I can see the job search result count displayed in the page is greater than {int}")
     public void i_can_see_the_job_search_result_count_displayed_in_the_page_is_greater_than(Integer jobCount) throws Exception {
-        jobsPage = PageFactory.initElements(driver, JobsPage.class);
         Assert.assertTrue(jobsPage.getDisplayedJobsTitlesCountGreaterThanZero() > jobCount);
     }
 
     @When("I should see Text for many items {string}")
     public void i_should_see_text_for_many_items(String jobTitle) {
-        jobsPage = PageFactory.initElements(driver, JobsPage.class);
         Assert.assertTrue(jobsPage.getTextForManySearchResultsItems().contains(jobTitle));
 
     }
 
     @When("I can see search results related to the {string}")
     public void i_can_see_search_results_having(String jobTitle) {
-        jobsPage = PageFactory.initElements(driver, JobsPage.class);
         Assert.assertTrue(jobsPage.assertSearchResultsForJobTitle(jobTitle));
     }
 
     @And("I can see search results not related to the {string}")
     public void i_can_see_search_results_not_relating_to_the(String jobTitle) {
-        jobsPage = PageFactory.initElements(driver, JobsPage.class);
         Assert.assertFalse(jobsPage.assertJobSearchResultsByJobTitle(jobTitle));
     }
 
@@ -127,8 +134,7 @@ public class steps extends BaseTest {
     }
 
     @Given("I tap on Accept all Cookies")
-    public void i_tap_on_accept_all_cookies() throws InterruptedException {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
+    public void i_tap_on_accept_all_cookies() {
         cookieBannerPage.clickAcceptAllCookiesButton();
     }
 
@@ -144,15 +150,23 @@ public class steps extends BaseTest {
     }
 
     @When("I click {string} link")
-    public void i_tap_on_about_us_link(String menuItemText) {
+    public void i_click_on_about_us_link(String menuItemText) {
         naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
         naviPage.clickAnItemMatchingTextFromTopMenuLinks(naviPage.getTopMenuList(), menuItemText);
 
     }
 
+    @When("I tap on the {string} link")
+    public void i_tap_on_about_us_link(String text) {
+        naviPage = PageFactory.initElements(driver, TopMenuNavigationPage.class);
+        basePage = PageFactory.initElements(driver, BasePage.class);
+        basePage.clickAnyMatchingElementByText(naviPage.getTopMenuList(), text);
+
+    }
+
     @When("I should see About Us page links as follows:")
     public void i_should_see_and_other_links_as_follows(DataTable dataTable) {
-        AboutUsPage aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
+        aboutUsPage = PageFactory.initElements(driver, AboutUsPage.class);
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsTitlesList().contains(dataTable.cell(0, 0)));
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsTitlesList().contains(dataTable.cell(1, 0)));
         AssertionHelper.updateTestStatus(aboutUsPage.getAboutUsTitlesList().contains(dataTable.cell(2, 0)));
@@ -189,7 +203,6 @@ public class steps extends BaseTest {
 
     @Then("Industries Sub links are displayed as follows:")
     public void industries_and_sub_links_are_displayed_as_follows(DataTable dataTable) {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
         AssertionHelper.updateTestStatus(indexPage.getIndustriesTitlesList().contains(dataTable.cell(0, 0)));
         AssertionHelper.updateTestStatus(indexPage.getIndustriesTitlesList().contains(dataTable.cell(1, 0)));
         AssertionHelper.updateTestStatus(indexPage.getIndustriesTitlesList().contains(dataTable.cell(2, 0)));
@@ -199,7 +212,6 @@ public class steps extends BaseTest {
 
     @Then("Industries Sub links are present")
     public void industries_and_sub_links_are_present() {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
         AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Financial Services"));
         AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Insurance"));
         AssertionHelper.updateTestStatus(indexPage.assertIndustriesTitlesArePresent("Life and Pensions"));
@@ -208,14 +220,12 @@ public class steps extends BaseTest {
 
     @Then("Financial Services Sub title links are present")
     public void financial_services_sub_title_links_are_present() {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
         AssertionHelper.updateTestStatus(indexPage.assertFinancialServicesItemsPresent().get(0).isDisplayed());
 
     }
 
     @When("I tap {string} link Industries")
     public void i_tap_on_financial_services_industries_links(String industryName) {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesLinkText().equalsIgnoreCase(industryName));
         indexPage.clickElementInIndustriesLink(industryName);
 
@@ -223,14 +233,12 @@ public class steps extends BaseTest {
 
     @Then("I can see {string} and {int} red links are displayed")
     public void i_should_see_seven_links_are_displayed(String selectIndustry, int linkCount) {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
         AssertionHelper.updateTestStatus(indexPage.getSelectIndustryText().equalsIgnoreCase(selectIndustry));
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesLinksCount() == linkCount);
     }
 
     @Then("I should see red links are displayed as follows:")
     public void i_should_see_red_links_are_displayed_as_follows(DataTable dataTable) {
-        indexPage = PageFactory.initElements(driver, IndexPage.class);
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesList().contains(dataTable.cell(0, 0)));
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesList().contains(dataTable.cell(1, 0)));
         AssertionHelper.updateTestStatus(indexPage.getFinancialServicesList().contains(dataTable.cell(2, 0)));
@@ -242,21 +250,23 @@ public class steps extends BaseTest {
 
     @Then("{string} is displayed")
     public void cookie_preference_center_is_displayed(String headingText) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         Assert.assertEquals(cookieBannerPage.getCookiePreferenceCenterText(), headingText);
     }
 
     @When("I click on {string} in home page")
     public void i_click_on_cookies_settings_in_home_page(String cookieSettingsText) throws IOException {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         getScreenshot(cookieBannerPage.getCookieBanner());
         AssertionHelper.updateTestStatus(cookieBannerPage.getCookieSettingsButtonText().contains(cookieSettingsText));
         cookieBannerPage.clickCookieSettingsButton();
     }
 
+    @When("I click close x button to close policy privacy section")
+    public void i_click_close_policy_privacy_section() throws IOException {
+        cookieBannerPage.clickCloseCookiePolicyButton();
+    }
+
     @When("I should see {string} is {string} by default")
     public void i_should_see_strictly_necessary_cookies_is_always_active_by_default(String categoryName, String cookieValue) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         new JavaScriptHelper(driver).scrollIntoView(cookieBannerPage.getStrictlyNecessaryCookies());
         cookieBannerPage.assertItemDisplayedFromCategoryHeaderList(categoryName);
         AssertionHelper.updateTestStatus(cookieBannerPage.getAlwaysActiveText().contains(cookieValue));
@@ -264,49 +274,61 @@ public class steps extends BaseTest {
 
     @When("I click plus icon in {string} from Manage Consent Preferences")
     public void i_click_plus_icon_from_consent_preferences(String categoryName) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         cookieBannerPage.clickAccordionPlusMinusList(categoryName);
     }
 
     @When("I can see minus icon and switch nob should not be displayed in {string}")
     public void i_can_see_minus_icon_and_switch_nob_should_not_be_displayed(String categoryName) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         cookieBannerPage.assertPlusOrMinusButtonIsDisplayed(categoryName);
         cookieBannerPage.assertSwitchNobIsDisplayed(categoryName);
     }
 
     @Then("I click on {string} button in home page")
     public void i_click_accept_all_cookies_button_in_home_page(String acceptAllCookies) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         existsElement(cookieBannerPage.getCookieBanner());
         AssertionHelper.updateTestStatus(cookieBannerPage.getAcceptAllCookiesButtonText().contains(acceptAllCookies));
         cookieBannerPage.clickAcceptAllCookiesButton();
     }
 
+    @Then("I tap on {string} button in cookies banner")
+    public void i_tap_accept_all_cookies_button_in_cookies_banner(String cookiesName) {
+        existsElement(cookieBannerPage.getCookieBanner());
+        cookieBannerPage.clickAnyCookieBannerButton(cookieBannerPage.getCookieBannerButtons(), cookiesName);
+    }
+
+    @Then("I click {string} button in cookies banner")
+    public void i_click_accept_all_cookies_button_in_cookies_banner(String cookiesName) {
+        basePage = PageFactory.initElements(driver, BasePage.class);
+        existsElement(cookieBannerPage.getCookieBanner());
+        List<String> getText = basePage.getAnyMatchingElement_Text_Attribute_TagName(cookieBannerPage.getCookieBannerButtons(), WebElement::getText);
+        List<String> getAttribute = basePage.getAnyMatchingElement_Text_Attribute_TagName(cookieBannerPage.getCookieBannerButtons(), s -> s.getAttribute("button"));
+        List<String> getTagNames = basePage.getAnyMatchingElement_Text_Attribute_TagName(cookieBannerPage.getCookieBannerButtons(), WebElement::getTagName);
+        System.out.println("Text: " + getText);
+        System.out.println("Attribute : " + getAttribute);
+        System.out.println("Tag names: " + getTagNames);
+        basePage.clickAnyElementMatchingText(cookieBannerPage.getCookieBannerButtons(), e -> e.getText().equalsIgnoreCase(cookiesName));
+    }
+
     @Then("I tap on {string} button")
     public void i_tap_on_confirm_my_choices_button(String confirmMyChoiceButtonText) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         AssertionHelper.updateTestStatus(cookieBannerPage.getConfirmMyChoiceButtonText().contains(confirmMyChoiceButtonText));
         cookieBannerPage.clickConfirmMyChoicesButton();
     }
 
     @When("I click plus icon and switch nob from category {string}")
     public void i_click_plus_icon_and_switch_nob_from_Category(String categoryCookiesName) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         cookieBannerPage.clickAccordionPlusMinusList(categoryCookiesName);
         cookieBannerPage.clickSwitchNobs(categoryCookiesName);
     }
 
     @When("I can see minus icon and switch nob turns green color in {string}")
     public void i_can_see_minus_icon_and_switch_nob_turns_green_color(String categoryName) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         cookieBannerPage.assertPlusOrMinusButtonIsDisplayed(categoryName);
         cookieBannerPage.assertSwitchNobIsDisplayed(categoryName);
     }
 
     @When("I click {string} Cookies button")
     public void i_click_allow_all_cookies_button(String allowAllCookiesText) {
-        cookieBannerPage = PageFactory.initElements(driver, CookieBannerPage.class);
         AssertionHelper.updateTestStatus(cookieBannerPage.getAllowAllButtonText().contains(allowAllCookiesText));
         cookieBannerPage.clickAllowAllButton();
     }

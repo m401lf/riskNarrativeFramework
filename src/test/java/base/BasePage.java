@@ -15,6 +15,8 @@ import utilities.GlobalVars;
 
 import java.time.Duration;
 import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import static base.BaseTest.driver;
 
@@ -860,13 +862,33 @@ public class BasePage {
     }
 
     public void waitForElementToAppear(By findBy) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
         wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 
     }
 
+    public void waitForElementToAppear(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
+        wait.until((d) -> element.isDisplayed());
+        log.info("Waiting Element to appear....");
+    }
+
+    public void waitForElementToDisappear(By findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(findBy));
+        log.info("Waiting Element to disappear....");
+    }
+
+    public void waitForElementsToAppear(List<WebElement> elements) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.getExplicitWait()));
+        //wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+        wait.until((d) -> elements.size() > 1);
+        log.info("Waiting Elements to appear....");
+
+    }
+
     public void waitForWebElementToAppear(WebElement findBy) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVars.explicitWait));
         wait.until(ExpectedConditions.visibilityOf(findBy));
 
     }
@@ -900,5 +922,55 @@ public class BasePage {
         String childWindow = i1.next();
         driver.switchTo().window(childWindow);
     }
+
+    public void clickAnyElementMatchingText(List<WebElement> elements, Predicate<WebElement> predicate) {
+        WebElement element = elements
+                .stream()
+                .parallel()
+                .filter(predicate)
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Element not present"));
+        element.click();
+    }
+
+    public void clickAnyMatchingLinkText(List<WebElement> element, String linkText) {
+        WebElement ele = element.stream()
+                .parallel()
+                .filter(s -> s.getText().equalsIgnoreCase(linkText))
+                .findFirst()
+                .orElse(null);
+        if (ele != null) {
+            ele.click();
+            log.info("Clicked on the link");
+        }
+    }
+
+    public void clickAnyMatchingElementByText(List<WebElement> elements, String text) {
+        WebElement element = elements
+                .stream()
+                .parallel()
+                .filter(s -> s.isDisplayed() && s.getText().contains(text))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Element with text " + text + " not present"));
+        element.click();
+    }
+
+
+    public List<String> getAnyMatchingElement_Text_Attribute_TagName(List<WebElement> elements, Function<WebElement, String> Function) {
+        return elements
+                .stream()
+                .parallel()
+                .filter(WebElement::isDisplayed)
+                .map(Function)
+                .toList();
+    }
+
+    public boolean assertAnyLinkFromListOfElements(List<WebElement> listOfElements, String linkText) {
+        return listOfElements
+                .stream()
+                .parallel()
+                .anyMatch(s -> s.getText().equalsIgnoreCase(linkText));
+    }
+
 
 }

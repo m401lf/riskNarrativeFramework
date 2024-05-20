@@ -59,12 +59,6 @@ public class TopMenuNavigationPage {
     @FindBy(xpath = "//a[normalize-space()='Products']")
     private WebElement productsLink;
 
-
-    public boolean assertChooseYourIndustryLinkIsDisplayed() {
-        return chooseYourIndustryLink.isDisplayed();
-
-    }
-
     public String getChooseYourIndustryLink() {
         return chooseYourIndustryLink.getText();
 
@@ -84,11 +78,6 @@ public class TopMenuNavigationPage {
 
     public boolean assertTopMenuItemsAreDisplayed() {
         return topMenuList.stream().parallel().filter(WebElement::isDisplayed).count() == topMenuList.size();
-
-    }
-
-    public boolean assertLogoIsDisplayed() {
-        return logo.isDisplayed();
 
     }
 
@@ -160,9 +149,10 @@ public class TopMenuNavigationPage {
 
     }
 
-
     public void clickAnItemMatchingTextFromTopMenuLinks(List<WebElement> topMenuList, String menuItemText) {
-        topMenuList.stream().parallel().filter(item -> item.getText().contains(menuItemText)).findFirst().ifPresent(s -> s.click());
+        topMenuList.stream().parallel().filter(item -> item.getText().contains(menuItemText)).findFirst().ifPresent(WebElement::click);
         log.info(menuItemText + " link is clicked");
     }
+
+
 }

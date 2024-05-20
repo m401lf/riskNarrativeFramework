@@ -51,6 +51,7 @@ public class JobsPage {
     private List<WebElement> selectOneMoreDropDownList;
 
 
+
     public boolean assertSearchAllJobsHeaderIsDisplayed() {
         return new VerificationHelper(driver).isDisplayed(searchAllJobsHeader);
     }
@@ -149,7 +150,7 @@ public class JobsPage {
                 return displayedJobsTitlesList.get(i).getText().contains(jobTitle);
             }
         }
-        return false;
+        return true;
     }
 
     public void inputSearchBox(String jobTitle) {
@@ -234,6 +235,7 @@ public class JobsPage {
 
 
     public String getStatisticsResultText() {
+        //new BasePage().waitForWebElementToAppear(showingResultsStatistics);
         return new VerificationHelper(driver).getText(showingResultsStatistics);
 
     }

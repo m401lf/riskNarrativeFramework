@@ -1,5 +1,6 @@
 package pages;
 
+import base.BasePage;
 import com.google.common.util.concurrent.Uninterruptibles;
 import helper.LoggerHelper;
 import helper.assertion.VerificationHelper;
@@ -7,6 +8,8 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.GlobalVars;
 
@@ -17,6 +20,7 @@ import java.util.List;
 public class CookieBannerPage {
     final static Logger log = LoggerHelper.getLogger(CookieBannerPage.class);
     WebDriver driver;
+    BasePage basePage;
 
     @FindBy(id = "onetrust-banner-sdk")
     private WebElement cookieBanner;
@@ -60,12 +64,13 @@ public class CookieBannerPage {
     private WebElement confirmMyChoicesButton;
     @FindBy(css = "img[title='Powered by OneTrust Opens in a new Tab']")
     private WebElement poweredByOneTrust;
-    @FindBy(css = "id='close-pc-btn-handler'")
-    private WebElement closeX;
+
 
     @FindBy(xpath = "/html/body/div[3]/div[4]/div/div[2]/div/div[2]/div/div/div/h3/a")
     private List<WebElement> perPageJobsDisplayedList;
 
+    @FindBy(css = "button.onetrust-close-btn-handler.onetrust-close-btn-ui")
+    private WebElement closeCookiePolicyButton;
 
     public void acceptCookie() {
         log.info("Accepting all cookies");
@@ -79,6 +84,8 @@ public class CookieBannerPage {
     }
 
     public boolean assertCookieBannerIsDisplayed() {
+        basePage = PageFactory.initElements(driver, BasePage.class);
+        basePage.waitForWebElementToAppear(cookieBanner);
         return new VerificationHelper(driver).isDisplayed(cookieBanner);
 
     }
@@ -98,8 +105,12 @@ public class CookieBannerPage {
 
     }
 
+    public Boolean assertCookiesButtons() {
+        return new WebDriverWait(driver, Duration.ofSeconds(15)).until((s) -> cookieBannerButtons.size() == 2);
+
+    }
+
     public String getCookieSettingsButtonText() {
-        //Uninterruptibles.sleepUninterruptibly(Duration.ofSeconds(GlobalVars.THREE));
         return new VerificationHelper(driver).getText(cookiesSettingsButton);
 
     }
@@ -122,8 +133,8 @@ public class CookieBannerPage {
     }
 
     public void clickCookieSettingsButton() {
-        log.info("Cookie settings button clicked");
         cookiesSettingsButton.click();
+        log.info("Cookie settings button clicked");
 
     }
 
@@ -131,6 +142,16 @@ public class CookieBannerPage {
         log.info("Size of cookies Banner button :" + cookieBannerButtons.size());
         return cookieBannerButtons;
 
+    }
+
+    public void clickAnyCookieBannerButton(List<WebElement> cookieBannerButtons, String cookieName) {
+        WebElement element = cookieBannerButtons
+                .stream()
+                .parallel()
+                .filter(s -> s.getText().contains(cookieName))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Element with text" + cookieBannerButtons + "not present"));
+        element.click();
     }
 
     public String getManageConsentPreferencesHeaderText() {
@@ -272,16 +293,6 @@ public class CookieBannerPage {
 
     }
 
-    public void clickCloseX() {
-        closeX.click();
-
-    }
-
-    public boolean assertCloseXIsDisplayed() {
-        return new VerificationHelper(driver).isDisplayed(closeX);
-
-    }
-
     public WebElement getStrictlyNecessaryCookies() {
         return strictlyNecessaryCookies;
 
@@ -360,5 +371,15 @@ public class CookieBannerPage {
 
     public String getAllowAllButtonText() {
         return new VerificationHelper(driver).getText(allowAllButton);
+    }
+
+    public boolean assertCloseCookiePolicyButton() {
+        return new VerificationHelper(driver).isDisplayed(closeCookiePolicyButton);
+
+    }
+
+    public void clickCloseCookiePolicyButton() {
+        closeCookiePolicyButton.click();
+        log.info("Close cookie policy button is clicked");
     }
 }

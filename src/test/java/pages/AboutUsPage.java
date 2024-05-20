@@ -1,9 +1,8 @@
 package pages;
 
-import helper.GenericMethods;
+import base.BasePage;
 import helper.LoggerHelper;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,10 +10,14 @@ import java.util.List;
 
 public class AboutUsPage {
     final static Logger log = LoggerHelper.getLogger(AboutUsPage.class);
+
     @FindBy(xpath = "/html/body/header/div/div/div/nav/div/div/div[2]/div/div/ul/li[4]/ul/li/div/div/div/div/div/div/h4")
-    List<WebElement> allLinks;
-    WebDriver driver;
-    GenericMethods gm;
+    List<WebElement> allAboutLinks;
+
+    public List<WebElement> getAllAboutLinks() {
+        return allAboutLinks;
+    }
+
     @FindBy(xpath = "//div[@class='score-content-spot']//p[contains(text(),'About Us')]")
     private WebElement aboutUsHeadingText;
     @FindBy(xpath = "//div[@class='score-style-box clearfix']//a[@class='score-button btn-clickable-area'][normalize-space()='Learn More']")
@@ -31,7 +34,7 @@ public class AboutUsPage {
     }
 
     public boolean assertAnyLinksInAboutUsPage(String linkText) {
-        return allLinks.stream()
+        return allAboutLinks.stream()
                 .parallel()
                 .anyMatch(s -> s.getText().equalsIgnoreCase(linkText));
     }
@@ -43,11 +46,13 @@ public class AboutUsPage {
 
     public long getAllLinksCount() {
         log.info("Asserting all links count");
-        return allLinks.stream().parallel().filter(WebElement::isDisplayed).count();
+        return allAboutLinks.stream().parallel().filter(WebElement::isDisplayed).count();
     }
 
     public List<String> getAboutUsTitlesList() {
-        return allLinks.stream().parallel().filter(link -> link.isDisplayed() && link.isEnabled()).map(WebElement::getText).toList();
+        new BasePage().waitForElementsToAppear(allAboutLinks);
+        log.info("Getting About Us Titles List");
+        return allAboutLinks.stream().parallel().filter(link -> link.isDisplayed() && link.isEnabled()).map(WebElement::getText).toList();
     }
 
 

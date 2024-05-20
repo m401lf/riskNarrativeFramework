@@ -22,11 +22,13 @@ public class CareersPage {
 
     public WebElement getSearchJobsButton() {
         return searchJobsButton;
+
     }
 
-    public void clickSearchJobsButton() {
+    public JobsPage clickSearchJobsButton() {
         searchJobsButton.click();
         log.info("Search jobs button is clicked");
+        return new JobsPage();
     }
 
     public String getSearchJobsButtonText() {
@@ -34,15 +36,17 @@ public class CareersPage {
 
     }
 
-
     public String getExploreMoreText() {
         return new VerificationHelper(driver).getText(exploreMoreText);
+
     }
 
     public String getCareersHeadingText() {
         return new VerificationHelper(driver).getText(careersHeadingText);
 
     }
+
+
 }
 
 
