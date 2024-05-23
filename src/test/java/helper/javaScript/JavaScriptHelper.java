@@ -55,7 +55,6 @@ public class JavaScriptHelper {
 
     public void scrollDownVertically() {
         log.info("scrolling down vertically...");
-        log.info("scrolling down vertically...");
         executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
 

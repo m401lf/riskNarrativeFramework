@@ -7,6 +7,7 @@ import helper.LoggerHelper;
 import helper.assertion.AssertionHelper;
 import helper.assertion.VerificationHelper;
 import helper.javaScript.JavaScriptHelper;
+import helper.javaScript.ScrollPageHelper;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -260,7 +261,7 @@ public class steps extends BaseTest {
         cookieBannerPage.clickCookieSettingsButton();
     }
 
-    @When("I click close x button to close policy privacy section")
+    @When("I click x button policy privacy bottom banner")
     public void i_click_close_policy_privacy_section() throws IOException {
         cookieBannerPage.clickCloseCookiePolicyButton();
     }
@@ -337,7 +338,24 @@ public class steps extends BaseTest {
     public void i_should_see_showing_result_in_job_page(String resultText) {
         jobsPage = PageFactory.initElements(driver, JobsPage.class);
         AssertionHelper.updateTestStatus(jobsPage.getStatisticsResultText().contains(resultText));
+
     }
 
+    @When("I should see Showing result count {string} in Job page")
+    public void i_should_see_showing_result_count_in_job_page(String resultCount) {
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        //Assert.assertTrue(jobsPage.getSearchResultsTitles().contains(resultCount));
+    }
+
+    @When("I should see Showing 211 Results")
+    public void i_should_see_showing_results() {
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+       jobsPage.assertJobSearchResultsByCount(Integer.parseInt("211"));
+    }
+    @When("I should see 211 Results in Job page")
+    public void i_should_see_results_in_job_page() throws InterruptedException {
+        jobsPage = PageFactory.initElements(driver, JobsPage.class);
+        jobsPage.assertJobSearchResultsCount();
+    }
 
 }

@@ -11,7 +11,8 @@ import io.cucumber.testng.CucumberOptions;
         //tags = "@OO1TC",
         //tags = "@002TC",
         //tags = "@003TC",
-        tags = "@004TC",
+        //tags = "@004TC",
+          tags = "@005TC",
         //tags = "@all",
         //name = "reg",
         plugin = {
